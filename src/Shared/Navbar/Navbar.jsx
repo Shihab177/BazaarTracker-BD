@@ -1,45 +1,91 @@
-import React from 'react';
+import React from "react";
 
-import { MdDashboard } from 'react-icons/md'
-import { Link, NavLink } from 'react-router'
-import Logo from '../Logo/Logo';
+import { MdDashboard } from "react-icons/md";
+import { Link, NavLink, useNavigate } from "react-router";
+import Logo from "../Logo/Logo";
+import useAuth from "../../hook/useAuth";
 
 const Navbar = () => {
-    
-   
-    return (
-        <nav className='flex items-center py-3'>
-           <div className='flex gap-4 items-center md:w-3/12'>
-             <Logo></Logo>
-             <h1 className='text-2xl font-bold'>BazaarTracker <span className='text-[#00B795]'>BD</span></h1>
-           </div>
-           
-            {/*NavLink profile and btn */}
-           <div className=' md:w-9/12 flex items-center gap-6 justify-end'>
-             {/* Menu Links */}
-           <div className='mx-4'>
-            <ul className='text-[18px] flex justify-between font-semibold'>
-            <NavLink className="hover:text-[#22A587]">All Products </NavLink>
-           
-            </ul>
-           </div>
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
+  const handelLogout = () => {
+    logout().then(() => {
+      navigate("/");
+    });
+  };
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50  ">
+      <div className="flex items-center my-3 md:container mx-auto">
+        <div className="flex gap-4 items-center md:w-3/12">
+          <Logo></Logo>
+          <h1 className="text-2xl font-bold">
+            BazaarTracker <span className="text-[#00B795]">BD</span>
+          </h1>
+        </div>
 
+        {/*NavLink profile and btn */}
+        <div className=" md:w-9/12 flex items-center gap-6 justify-end">
+          {/* Menu Links */}
+          <div className="mx-4">
+            <ul className="text-[18px] flex gap-6 justify-between font-semibold">
+              <li>
+                <NavLink to="/" className="hover:text-[#22A587]">
+                  Home
+                </NavLink>
+              </li>
+              <NavLink className="hover:text-[#22A587]">All Products </NavLink>
+            </ul>
+          </div>
+
+           {user && (
             <div>
-                 <Link className="text-[20px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2">
-                    <MdDashboard size={20} /> Dashboard
-                </Link>
+              <Link className="text-[18px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2">
+                <MdDashboard size={20} /> Dashboard
+              </Link>
             </div>
+          )}
+          {user && (
             <div>
-                <img src="" alt=""  referrerPolicy="no-referrer"/>
-                <h1 className='h-16 w-16 rounded-full bg-green-500'></h1>
+              <img
+                className="w-16 h-16 rounded-full"
+                src={user?.photoURL}
+                alt="profile"
+                referrerPolicy="no-referrer"
+              />
             </div>
-            {/* login logout btn */}
-            <div>
-                <Link to="" className="px-4 py-2 text-[20px] font-semibold bg-[#00B795] hover:bg-[#22A587] text-white rounded-sm flex items-center ">Login</Link>
-            </div>
-           </div>
-        </nav>
-    );
+          )}
+         
+
+          {/* login logout btn 27B896 */}
+          <div>
+            {user ? (
+              <button
+                onClick={handelLogout}
+                className="px-4 py-2 text-[18px] font-semibold bg-[#00B795] hover:bg-[#22A587] text-white rounded-sm flex items-center"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="text-[18px] font-semibold text-[#00B795]  hover:text-[#22A587] "
+              >
+                Login
+              </Link>
+            )}
+          </div>
+          {!user && (
+            <Link
+              to="/register"
+              className="px-4 py-2 text-[18px] font-semibold bg-[#00B795] hover:bg-[#22A587] text-white rounded-sm flex items-center"
+            >
+              Sign Up
+            </Link>
+          )}
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
