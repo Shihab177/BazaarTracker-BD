@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Banner = () => {
   return (
     <motion.section
-      className="relative h-[500px] bg-cover bg-center flex items-center justify-center text-white rounded-b-sm"
+      className="relative h-[540px] bg-cover bg-center flex items-center justify-center text-white rounded-b-sm"
       style={{
         backgroundImage:
           "url('https://i.ibb.co/WWDM5Q7L/Screenshot-2025-07-09-070801.png')",

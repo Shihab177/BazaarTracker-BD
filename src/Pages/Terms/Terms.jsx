@@ -1,6 +1,6 @@
 const Terms = () => {
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-4 text-gray-700">
+    <div className="max-w-4xl mx-auto p-6 space-y-4 my-27 text-gray-700">
       <h2 className="text-2xl font-bold">📃 Terms & Conditions</h2>
       <p>
         By using BazaarTracker, you agree to our platform’s rules and responsibilities. This includes using real data, respectful communication, and proper use of our services.
