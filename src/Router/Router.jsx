@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/Register/Register";
+import AllProduct from "../Pages/AllProduct/AllProduct";
 
 
 export const router = createBrowserRouter([
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
             {
                 path:'/terms',
                 Component:Terms
+            },
+            {
+                path:'AllProduct',
+                Component:AllProduct
             }
         ]
         

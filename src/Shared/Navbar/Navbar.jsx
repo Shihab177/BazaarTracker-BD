@@ -14,7 +14,7 @@ const Navbar = () => {
     });
   };
   return (
-    <nav className="fixed top-0 left-0 w-full z-50  ">
+    <nav className="fixed top-0 left-0 w-full z-50 shadow-md">
       <div className="flex items-center my-3 md:container mx-auto">
         <div className="flex gap-4 items-center md:w-3/12">
           <Logo></Logo>
@@ -33,7 +33,7 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <NavLink className="hover:text-[#22A587]">All Products </NavLink>
+              <NavLink to='AllProduct' className="hover:text-[#22A587]">All Products </NavLink>
             </ul>
           </div>
 
