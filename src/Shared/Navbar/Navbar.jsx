@@ -39,7 +39,7 @@ const Navbar = () => {
 
            {user && (
             <div>
-              <Link className="text-[18px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2">
+              <Link to='/dashboard' className="text-[18px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2">
                 <MdDashboard size={20} /> Dashboard
               </Link>
             </div>

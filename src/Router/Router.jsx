@@ -8,6 +8,11 @@ import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/Register/Register";
 import AllProduct from "../Pages/AllProduct/AllProduct";
 import PrivateRoute from "../Routes/PrivateRoute";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
+import MyProduct from "../Pages/Dashboard/MyProduct/MyProduct";
+import AddAdvertisement from "../Pages/Dashboard/AddAdvertisement/AddAdvertisement";
+import MyAdvertisements from "../Pages/Dashboard/MyAdvertisements/MyAdvertisements";
 
 
 export const router = createBrowserRouter([
@@ -42,6 +47,29 @@ export const router = createBrowserRouter([
             {
                 path:'register',
                 Component:Register
+            }
+        ]
+    },
+    {
+        path:'/dashboard',
+       element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children:[
+            //vendor
+            {
+                path:'add-product',
+                Component:AddProduct
+            },
+            {
+                path:'my-products',
+                Component:MyProduct
+            },
+            {
+                path:'add-ad',
+                Component:AddAdvertisement
+            },
+            {
+                path:'my-ads',
+                Component:MyAdvertisements
             }
         ]
     }

@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import Logo from "../../../Shared/Logo/Logo";
 import { MdEmail, MdLock } from "react-icons/md";
-import GoogleLogin from "../../../Shared/GoogleLogin/GoogleLogin";
+
 import useAuth from "../../../hook/useAuth";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
 
 const Login = () => {
   const {

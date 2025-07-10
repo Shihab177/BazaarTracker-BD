@@ -5,10 +5,12 @@ import Logo from "../../../Shared/Logo/Logo";
 import { MdPerson, MdEmail, MdLock, MdImage } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../../hook/useAuth";
-import GoogleLogin from "../../../Shared/GoogleLogin/GoogleLogin";
 import axios from "axios";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import useAxios from "../../../hook/useAxios";
 
 const Register = () => {
+  const axiosInstance =useAxios()
   const {
     register,
     handleSubmit,
@@ -20,9 +22,17 @@ const Register = () => {
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email,data.password)
-    .then( (result) =>{
+    .then( async(result) =>{
         console.log(result.user)
         //update userinfo in database
+          const userInfo = {
+        email: result?.user?.email,
+        role: "user",
+        created_at: new Date().toISOString(),
+        last_log_in: new Date().toISOString(),
+      };
+      await axiosInstance.post("/users", userInfo);
+       
         
         //update profile in firebase
         const userProfile = {
