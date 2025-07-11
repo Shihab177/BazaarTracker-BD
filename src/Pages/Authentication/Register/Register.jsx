@@ -36,11 +36,12 @@ const Register = () => {
         
         //update profile in firebase
         const userProfile = {
-          name:data.name,
+          displayName:data.name,
           photoURL: profilePic
         }
         updateUserProfile(userProfile)
         .then(()=>{
+          
           navigate("/")
         })
     })
