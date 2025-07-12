@@ -92,7 +92,7 @@ const UpdateProduct = () => {
       <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]">
         Update Product
       </h2>
-      <div className="max-w-4xl mx-auto bg-gray-50 p-8 shadow-md rounded-xl">
+      <div className="w-5xl mx-auto bg-gray-50 p-8 shadow-md rounded-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
             <label className="font-medium">Market Name</label>
@@ -230,7 +230,7 @@ const UpdateProduct = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="px-8 py-4 bg-[#00B795] hover:bg-[#22A587] font-bold text-white rounded-md"
+              className="px-12 py-4 bg-[#00B795] hover:bg-[#22A587] font-bold text-white rounded-md"
             >
               Update Product
             </button>

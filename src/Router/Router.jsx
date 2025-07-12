@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
                 Component:MyProduct
             },
             {
-                path:'add-ad',
+                path:'add-ads',
                 Component:AddAdvertisement
             },
             {

@@ -90,7 +90,7 @@ const DashboardLayout = () => {
 
               <li className="  gap-2">
                 <NavLink
-                  to="/dashboard/add-ad"
+                  to="/dashboard/add-ads"
                   className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
                 >
                   <RiAdvertisementLine />

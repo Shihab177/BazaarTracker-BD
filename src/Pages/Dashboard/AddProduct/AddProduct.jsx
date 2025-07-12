@@ -70,12 +70,13 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="my-15">
-      <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]">
+    <div className="">
+      
+      <div className="w-5xl mx-auto bg-white p-8 shadow-xl rounded-xl my-10">
+        <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]">
         {" "}
         Add New Product
       </h2>
-      <div className="max-w-4xl mx-auto bg-gray-50 p-8 shadow-md rounded-xl ">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Vendor Info */}
           <div className="grid md:grid-cols-2 gap-4">
@@ -232,7 +233,7 @@ const AddProduct = () => {
           <div className="text-center">
             <button
               type="submit"
-              className=" px-8 py-4 bg-[#00B795] hover:bg-[#22A587] font-bold text-white rounded-md mt-4"
+              className=" px-12 py-4 bg-[#00B795] hover:bg-[#22A587] font-bold text-white rounded-md mt-4"
             >
               Add Product
             </button>

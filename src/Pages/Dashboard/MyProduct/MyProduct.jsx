@@ -11,7 +11,7 @@ const MyProducts = () => {
   const axiosSecure = useAxiosSecure()
 
    const { data: products = [], refetch } = useQuery({
-        queryKey: ['my-parcels', user.email],
+        queryKey: ['my-products', user.email],
         queryFn: async () => {
             const res = await axiosSecure.get(`/products?email=${user.email}`);
             return res.data;
@@ -46,7 +46,7 @@ const MyProducts = () => {
 
       <div className="overflow-x-auto rounded-md shadow border border-gray-100">
         <table className="min-w-full text-md text-left ">
-          <thead className="bg-gray-100 text-gray-700">
+          <thead className="bg-[#00B795] text-[18px] text-white">
             <tr>
               <th className="px-4 py-3">Item Name</th>
               <th className="px-4 py-3">Price/Unit</th>
@@ -71,10 +71,10 @@ const MyProducts = () => {
                 </td>
                 <td className="px-4 py-3 flex justify-center gap-2">
                   <Link to={`/dashboard/update-product/${product._id}`}>
-                    <button className="bg-[#00B795] hover:bg-[#22A587] px-4 py-1 font-bold text-white rounded-md">Update</button>
+                    <button className="bg-[#00B795] hover:bg-[#22A587] px-4 py-1 text-sm font-bold text-white rounded-md">Update</button>
                   </Link>
                   <button
-                    className="rounded-md bg-red-500  hover:bg-red-600 px-4 py-1 font-bold text-white"
+                    className="rounded-md bg-red-500  hover:bg-red-600 text-sm px-4 py-1 font-bold text-white"
                     onClick={() => handleDelete(product._id)}>
                     Delete
                   </button>
