@@ -169,7 +169,7 @@ const AddProduct = () => {
             <input
               type="text"
               value={new Date().toISOString().split("T")[0]}
-              
+                readOnly
               className="w-full px-4 py-2 border border-gray-300 bg-white rounded
             focus:outline-none focus:ring-2 focus:ring-[#00B795]"
             />
@@ -207,10 +207,13 @@ const AddProduct = () => {
                   {...register(`prices.${index}.price`, { required: true })}
                   className="w-full px-4 py-2 border border-gray-300 bg-white rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
                 />
+                {
+                  errors.prices?.[index]?.price && <p className="text-red-500">price is required</p>
+                }
                 <button
                   type="button"
                   onClick={() => remove(index)}
-                  className="btn btn-error btn-sm text-white"
+                  className="btn btn-error btn-sm bg-red-500 text-white"
                 >
                   ✕
                 </button>

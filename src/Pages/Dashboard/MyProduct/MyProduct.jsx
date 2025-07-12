@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import useAuth from '../../../hook/useAuth';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
 
-const ViewMyProducts = () => {
+const MyProducts = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure()
 
@@ -45,7 +45,7 @@ const ViewMyProducts = () => {
       <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]"> My Submitted Products</h2>
 
       <div className="overflow-x-auto rounded-md shadow border border-gray-100">
-        <table className="min-w-full text-sm text-left ">
+        <table className="min-w-full text-md text-left ">
           <thead className="bg-gray-100 text-gray-700">
             <tr>
               <th className="px-4 py-3">Item Name</th>
@@ -88,4 +88,4 @@ const ViewMyProducts = () => {
   );
 };
 
-export default ViewMyProducts;
+export default MyProducts;
