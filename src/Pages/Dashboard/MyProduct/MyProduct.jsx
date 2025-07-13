@@ -71,10 +71,10 @@ const MyProducts = () => {
                 </td>
                 <td className="px-4 py-3 flex justify-center gap-2">
                   <Link to={`/dashboard/update-product/${product._id}`}>
-                    <button className="bg-[#00B795] hover:bg-[#22A587] px-4 py-1 text-sm font-bold text-white rounded-md">Update</button>
+                    <button className="bg-[#00B795] hover:bg-[#22A587] px-4 py-2 text-sm font-bold text-white rounded-md">Update</button>
                   </Link>
                   <button
-                    className="rounded-md bg-red-500  hover:bg-red-600 text-sm px-4 py-1 font-bold text-white"
+                    className="rounded-md bg-red-500  hover:bg-red-600 text-sm px-4 py-2 font-bold text-white"
                     onClick={() => handleDelete(product._id)}>
                     Delete
                   </button>
