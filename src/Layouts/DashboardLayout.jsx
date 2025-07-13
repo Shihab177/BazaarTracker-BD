@@ -21,7 +21,7 @@ import {
 
 const DashboardLayout = () => {
  
-  const role ='vendor'
+  const role ='admin'
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -58,10 +58,10 @@ const DashboardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu   bg-base-200  text-base-content text-2xl min-h-full w-80 p-4 shadow-2xl">
+        <ul className="menu   bg-base-200  text-base-content text-[22px] min-h-full w-80 p-4 shadow-2xl">
           {/* Sidebar content here */}
           
-          <Link to='/'> <Logo></Logo></Link>
+          <Link className="flex gap-3 items-center" to='/'> <Logo></Logo> <span className="text-[24px] font-semibold">BazaarTracker <span className="text-[#00B795] ">BD</span> </span></Link>
           
           {role === "vendor" && (
             <>
@@ -70,7 +70,7 @@ const DashboardLayout = () => {
                <li className="mt-5">  <NavLink
                   to="/dashboard/add-product"
                   
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <MdAddShoppingCart className="" />
                   Add Product
@@ -81,7 +81,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/my-products"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <MdViewList />
                   My Products
@@ -91,7 +91,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/add-ads"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <RiAdvertisementLine />
                   Add Advertisement
@@ -101,7 +101,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/my-ads"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <TbListDetails />
                   My Advertisements
@@ -114,7 +114,7 @@ const DashboardLayout = () => {
               <li className=" mt-5 gap-2">
                 <NavLink
                   to="/dashboard/all-users"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <FaUsers />
                   All Users
@@ -124,7 +124,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/all-products"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white" : undefined}
                 >
                   <MdShoppingBasket />
                   All Products
@@ -134,7 +134,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/all-ads"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <RiAdvertisementLine />
                   All Advertisements
@@ -144,7 +144,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/all-orders"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <FaShoppingCart />
                   All Orders
@@ -157,7 +157,7 @@ const DashboardLayout = () => {
               <li className=" mt-5 gap-2">
                 <NavLink
                   to="/dashboard/price-trends"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <MdTimeline />
                   Price Trends
@@ -167,7 +167,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/watchlist"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <FaRegEye />
                   My Watchlist
@@ -177,7 +177,7 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/my-orders"
-                  className={({ isActive }) => isActive ? "text-[#00B795] " : undefined}
+                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <FaShoppingBag />
                   My Orders
