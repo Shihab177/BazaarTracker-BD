@@ -72,7 +72,7 @@ const AddProduct = () => {
   return (
     <div className="">
       
-      <div className="w-5xl mx-auto bg-white p-8 shadow-xl rounded-xl my-10">
+      <div className="w-5xl mx-auto bg-white p-8 shadow-xl rounded-xl my-10 border border-gray-300">
         <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]">
         {" "}
         Add New Product
@@ -93,7 +93,7 @@ const AddProduct = () => {
               <label className="font-medium">Vendor Name</label>
               <input
                 type="text"
-                value={user?.displayName}
+                value={user?.displayName }
                 readOnly
                 className="w-full px-4 py-2 border border-gray-300 bg-white rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
               />

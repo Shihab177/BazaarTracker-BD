@@ -15,6 +15,7 @@ const GoogleLogin = () => {
       console.log(result.user);
       const userInfo = {
         email: result?.user?.email,
+        name: result?.user?.displayName,
         role: "user",
         created_at: new Date().toISOString(),
         last_log_in: new Date().toISOString(),

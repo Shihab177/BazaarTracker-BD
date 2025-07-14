@@ -14,7 +14,7 @@ const UpdateProduct = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-
+  const role = 'admin'
   const {
     register,
     control,
@@ -80,7 +80,9 @@ const UpdateProduct = () => {
       const res = await axiosSecure.patch(`/product/${id}`, updatedData);
       if (res.data.modifiedCount > 0) {
         toast.success("Product updated successfully!");
-        navigate("/dashboard/my-products");
+        role === 'admin' && navigate('/dashboard/all-products')
+        
+       role === 'vendor' &&  navigate("/dashboard/my-products");
       }
     } catch {
       toast.error("Failed to update product.");

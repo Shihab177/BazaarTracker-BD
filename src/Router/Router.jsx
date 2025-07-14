@@ -15,6 +15,7 @@ import AddAdvertisement from "../Pages/Dashboard/AddAdvertisement/AddAdvertiseme
 import MyAdvertisements from "../Pages/Dashboard/MyAdvertisements/MyAdvertisements";
 import UpdateProduct from "../Pages/Dashboard/MyProduct/UpdateProduct/UpdateProduct";
 import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
+import AllProducts from "../Pages/Dashboard/Admin/AllProducts/AllProducts";
 
 
 export const router = createBrowserRouter([
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
             {
                 path:'all-users',
                 Component:AllUsers
+            },
+            {
+                path:'all-products',
+                Component:AllProducts
             }
         ]
     }

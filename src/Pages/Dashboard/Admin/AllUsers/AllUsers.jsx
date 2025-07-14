@@ -28,13 +28,13 @@ const AllUsers = () => {
   };
 
   return (
-    <div className="p-5 w-6xl my-10 mx-auto">
+    <div className="p-5 w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
       <h1 className="text-3xl text-center text-[#00B795] font-semibold mb-6 flex items-center gap-3 justify-center"><span><FaUsers /></span> All Users</h1>
 
       <input
         type="text"
         placeholder="Search by name or email..."
-        className=" mb-6  w-full px-4 py-2 border border-gray-300 bg-white rounded
+        className=" mb-6  w-full px-4 py-2 border border-[#00B795] bg-white rounded
             focus:outline-none focus:ring-2 focus:ring-[#00B795]"
         value={search}
         onChange={(e) => setSearch(e.target.value)}

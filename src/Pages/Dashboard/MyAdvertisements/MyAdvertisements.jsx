@@ -99,12 +99,12 @@ const [profilePic, setProfilePic] = useState();
   };
 
   return (
-    <div className="p-4 md:p-10 min-h-screen">
-      <h2 className="text-3xl font-bold text-center mb-8 text-[#00B795]">
+    <div className="pb-4 w-6xl mx-auto border rounded-xl shadow-md border-gray-300 my-10 ">
+      <h2 className="text-3xl font-bold text-center my-8 text-[#00B795]">
         My Advertisements
       </h2>
 
-      <div className="overflow-x-auto rounded-md shadow-md">
+      <div className="overflow-x-auto rounded-md ">
         <table className="table w-full text-md font-semibold">
           <thead className="bg-[#00B795] text-white text-[18px]">
             <tr>

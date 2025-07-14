@@ -48,7 +48,7 @@ const AddAdvertisement = () => {
   };
 
   return (
-    <div className="w-5xl my-10 mx-auto p-8 bg-white rounded-lg shadow-xl">
+    <div className="w-5xl my-10 mx-auto p-8 bg-white border border-gray-300 rounded-lg shadow-xl">
       <h2 className="text-3xl font-bold mb-6 text-[#00B795] text-center">
         Create Advertisement
       </h2>

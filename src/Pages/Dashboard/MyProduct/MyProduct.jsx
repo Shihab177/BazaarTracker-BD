@@ -41,10 +41,10 @@ const MyProducts = () => {
   };
 
   return (
-    <div className="p-4 md:p-10 min-h-screen">
-      <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]"> My Submitted Products</h2>
+    <div className="pb-4 w-6xl mx-auto border border-gray-300 shadow-md rounded-xl my-10">
+      <h2 className="text-3xl font-bold my-8 text-center text-[#00B795]"> My Submitted Products</h2>
 
-      <div className="overflow-x-auto rounded-md shadow border border-gray-100">
+      <div className="overflow-x-auto rounded-md  border border-gray-100">
         <table className="min-w-full text-md text-left ">
           <thead className="bg-[#00B795] text-[18px] text-white">
             <tr>
