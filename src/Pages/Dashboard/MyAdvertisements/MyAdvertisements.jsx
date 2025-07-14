@@ -99,7 +99,7 @@ const [profilePic, setProfilePic] = useState();
   };
 
   return (
-    <div className="pb-4 w-6xl mx-auto border rounded-xl shadow-md border-gray-300 my-10 ">
+    <div className="pb-4 px-4 w-6xl mx-auto border rounded-xl shadow-md border-gray-300 my-10 ">
       <h2 className="text-3xl font-bold text-center my-8 text-[#00B795]">
         My Advertisements
       </h2>
@@ -115,6 +115,11 @@ const [profilePic, setProfilePic] = useState();
             </tr>
           </thead>
           <tbody>
+            {advertisements.length === 0 &&  <tr>
+      <td colSpan="6" className="text-center py-6">
+        <span className="text-2xl font-semibold">You haven't added any advertisements yet</span>
+      </td>
+    </tr> }
             {advertisements.map((ad) => (
               <tr key={ad._id} className="hover even:bg-gray-50 odd:bg-white">
                 <td>{ad.title}</td>
