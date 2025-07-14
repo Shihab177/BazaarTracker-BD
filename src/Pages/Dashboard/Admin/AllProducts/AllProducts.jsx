@@ -96,7 +96,19 @@ const AllProducts = () => {
                 <td>{i + 1}</td>
                 <td>{product.itemName}</td>
                 <td>{product.vendorName}</td>
-                <td className="capitalize">{product.status}</td>
+                <td className="capitalize">
+                  <span
+                    className={`px-2 py-1 rounded text-xs font-semibold ${
+                      product.status === "approved"
+                       ? "bg-green-100 text-green-700"
+                        : product.status === "pending"
+                        ? "bg-yellow-100 text-yellow-700"
+                        : "bg-red-100 text-red-700 "
+                    }`}
+                  >
+                    {product.status}
+                  </span>
+                  </td>
                 <td className="space-x-2 text-center">
                   {product.status === "pending" && (
                     <>
