@@ -111,19 +111,19 @@ const AllProducts = () => {
               alt={product.itemName}
               className="w-full h-48 object-cover rounded-md mb-4"
             />
-            <h3 className="text-xl font-semibold">
-              <span>Product Name:</span> {product.itemName}
+            <h3 className="text-xl font-medium text-gray-900">
+              <span className="font-semibold">Product Name:</span> {product.itemName}
             </h3>
-            <p className="text-gray-900 font-medium">
+            <p className="text-gray-800 font-medium">
               <span className="font-semibold">Price:</span> ৳{product.pricePerUnit} per kg
             </p>
-            <p className="text-gray-900 font-medium">
+            <p className="text-gray-800 font-medium">
               <span className="font-semibold">Market:</span> {product.marketName}
             </p>
-            <p className="text-gray-900 font-medium">
+            <p className="text-gray-800 font-medium">
               <span className="font-semibold">Date:</span> {product.date}
             </p>
-            <p className="text-gray-900 font-medium">
+            <p className="text-gray-800 font-medium">
               <span className="font-semibold">Vendor:</span> {product.vendorName}
             </p>
             <div className="mt-4">
