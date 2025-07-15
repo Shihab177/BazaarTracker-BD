@@ -61,7 +61,7 @@ const AllAdvertisements = () => {
 
   return (
     <div className="mx-auto my-10 border border-gray-300  w-6xl px-4 pb-4 rounded-xl shadow-md">
-       <h1 className="text-3xl text-center text-[#00B795] font-semibold mb-6 flex items-center gap-3 mt-5 justify-center"><span><RiAdvertisementLine /></span>All Advertisements</h1>
+       <h1 className="text-3xl text-center  text-black font-semibold mb-6 flex items-center gap-3 mt-5 justify-center"><span><RiAdvertisementLine /></span>All Advertisements</h1>
       <div className="overflow-x-auto  rounded-md">
         <table className="min-w-full text-left">
           <thead className="bg-[#00B795] text-white text-sm">
@@ -116,7 +116,7 @@ const AllAdvertisements = () => {
                   )}
                   <button
                     onClick={() => handleDelete(ad._id)}
-                    className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded text-sm"
+                    className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded font-semibold text-sm"
                   >
                     Delete
                   </button>

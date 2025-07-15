@@ -75,7 +75,7 @@ const AllProducts = () => {
 
   return (
     <div className="p-5 w-6xl mx-auto border border-gray-300 shadow-md rounded-xl my-10">
-      <h1 className="text-3xl text-center text-[#00B795] font-semibold mb-6 flex items-center gap-3 justify-center">
+      <h1 className="text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
         <MdShoppingBasket /> All Products
       </h1>
 
