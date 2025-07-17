@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import useAxios from "../../../hook/useAxios";
 import useAuth from "../../../hook/useAuth";
 
@@ -10,6 +10,8 @@ const GoogleLogin = () => {
   const { signInWithGoogle } = useAuth();
   const navigate = useNavigate();
   const axiosInstance = useAxios();
+  const location = useLocation()
+  const form = location.state?.form || '/'
   const handleGoogleLogin = () => {
     signInWithGoogle().then(async (result) => {
       console.log(result.user);
@@ -22,7 +24,7 @@ const GoogleLogin = () => {
       };
       const res = await axiosInstance.post("/users", userInfo);
       if (res?.data?.insertedId || res?.status === 200) {
-        navigate("/");
+        navigate(form);
       }
     });
   };

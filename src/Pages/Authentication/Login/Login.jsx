@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import Logo from "../../../Shared/Logo/Logo";
 import { MdEmail, MdLock } from "react-icons/md";
 
@@ -13,13 +13,15 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const location = useLocation()
+  const form = location.state?.form || '/'
    const navigate = useNavigate()
    const {signIn}= useAuth()
   const onSubmit = (data) => {
  
     signIn(data.email,data.password)
     .then(()=>{
-      navigate('/')
+      navigate(form)
     })
   };
 

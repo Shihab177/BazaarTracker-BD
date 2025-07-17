@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'product-details/:id',
-                Component:ProductDetails
+                element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
             },
             {
                 path:'payment/:productId',

@@ -6,14 +6,15 @@ import { useNavigate } from 'react-router';
 import useAuth from './useAuth';
 
  const axiosSecure = axios.create({
-        baseURL: "http://localhost:7000/"
+        baseURL: "http://localhost:7000"
     })
 const useAxiosSecure = () => {
     const navigate = useNavigate()
     const {user,logout}=useAuth()
     axiosSecure.interceptors.request.use((config)=>{
-        config.headers.authorization = `Bearer ${user.accessToken}`
+        config.headers.authorization = `Bearer ${user?.accessToken}`
          return config;
+
     },error=>{
       return Promise.reject(error);
     })
@@ -22,7 +23,7 @@ const useAxiosSecure = () => {
         return res;
     }, error => {
         const status = error.status;
-       
+       console.log(error)
         if (status === 403 ) {
             navigate('/Forbidden');
         }

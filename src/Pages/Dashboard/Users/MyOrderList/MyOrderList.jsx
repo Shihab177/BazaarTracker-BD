@@ -14,7 +14,7 @@ const MyOrderList = () => {
   const { data: orders = [], isLoading, isError, error } = useQuery({
     queryKey: ["orders", userEmail],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/orders?email=${userEmail}`);
+      const res = await axiosSecure.get(`/user-orders?email=${userEmail}`);
       return res.data;
     },
     enabled: !!userEmail,
@@ -58,7 +58,7 @@ const MyOrderList = () => {
                   <td className="px-6 py-4">{order.marketName}</td>
                   <td className="px-6 py-4">৳{order.pricePerUnit}</td>
                   <td className="px-6 py-4">
-                    {new Date(order.date).toLocaleDateString()}
+                    {new Date(order.paidAt).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 text-center">
                     <button

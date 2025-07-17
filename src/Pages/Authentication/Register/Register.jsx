@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import Logo from "../../../Shared/Logo/Logo";
 import { MdPerson, MdEmail, MdLock, MdImage } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
@@ -16,6 +16,8 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const location = useLocation()
+  const form = location.state?.form || '/'
    const [profilePic,setProfilePic]=useState('')
   const {createUser,updateUserProfile}= useAuth()
  const navigate = useNavigate()
@@ -43,7 +45,7 @@ const Register = () => {
         updateUserProfile(userProfile)
         .then(()=>{
           
-          navigate("/")
+          navigate(form)
         })
     })
     .catch(error=>{
