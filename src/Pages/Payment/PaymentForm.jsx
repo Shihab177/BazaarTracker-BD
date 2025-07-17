@@ -83,6 +83,7 @@ console.log(productId)
           const paymentData = {
             productId,
             email: user.email,
+            name: user.displayName,
             amount,
             transactionId: result.paymentIntent.id,
             paymentMethod: result.paymentIntent.payment_method_types,

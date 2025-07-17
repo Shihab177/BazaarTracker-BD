@@ -21,7 +21,7 @@ import {
 
 const DashboardLayout = () => {
  
-  const role ='admin'
+  const role ='user'
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
