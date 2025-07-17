@@ -22,6 +22,7 @@ import Payment from "../Pages/Payment/Payment";
 import AllOrders from "../Pages/Dashboard/Admin/AllOrders/AllOrders";
 import ViewPriceTrends from "../Pages/Dashboard/Users/ViewPriceTrends/ViewPriceTrends";
 import ManageWatchlist from "../Pages/Dashboard/Users/ManageWatchlist/ManageWatchlist";
+import MyOrderList from "../Pages/Dashboard/Users/MyOrderList/MyOrderList";
 
 
 export const router = createBrowserRouter([
@@ -118,6 +119,10 @@ export const router = createBrowserRouter([
             {
                 path:'watchlist',
                 Component:ManageWatchlist
+            },
+            {
+                path:'my-orders',
+                Component:MyOrderList
             },
         ]
     }

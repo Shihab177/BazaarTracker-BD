@@ -330,7 +330,7 @@ const ProductDetails = () => {
         </div>
 
         {isLoading && <p>Loading price trend data...</p>}
-        {error && <p className="text-red-600">Error: {error.message}</p>}
+        {error && <p className="text-red-600">No data for the selected date.</p>}
 
         {priceTrend ? (
           <>

@@ -55,7 +55,7 @@ const ManageWatchlist = () => {
   return (
     <div className="p-5 w-6xl mx-auto my-10 border border-gray-300 shadow-md rounded-md bg-white">
       <h2 className="text-3xl font-semibold mb-6 text-center text-black">
-        📋 Manage Watchlist
+         Manage Watchlist
       </h2>
 
       {watchlist.length === 0 ? (
