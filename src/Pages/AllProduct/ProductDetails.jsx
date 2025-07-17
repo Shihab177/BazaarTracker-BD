@@ -64,7 +64,21 @@ const ProductDetails = () => {
 
   // Mutation to add product to watchlist
   const addToWatchlistMutation = useMutation({
-    mutationFn: async () => axiosSecure.post(`/watchlist`, { productId: id }),
+   
+    mutationFn: async () => {
+     
+      const watchInfo = {
+        productId: product?._id,
+        userEmail: user?.email,
+        userName: user?.displayName,
+        productName: product?.name,
+        productImage: product?.image,
+        marketName: product?.marketName,
+        date: product?.date,
+        pricePerUnit: product?.pricePerUnit,
+      };
+     await axiosSecure.post(`/watchlist`, watchInfo);
+    },
     onSuccess: () => toast.success("Added to watchlist!"),
     onError: () => toast.error("Failed to add to watchlist."),
   });
@@ -117,7 +131,7 @@ const ProductDetails = () => {
     }
     submitReviewMutation.mutate();
   };
-  
+
   return (
     <div className="max-w-5xl mx-auto my-30 p-6 ">
       {/* Market & Product Info */}
@@ -293,116 +307,116 @@ const ProductDetails = () => {
       </section>
 
       {/* Price Comparison Chart */}
-     <section className="bg-white rounded shadow p-6 mt-5 border-t border-gray-200">
-  <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
-    Price Comparison
-  </h2>
+      <section className="bg-white rounded shadow p-6 mt-5 border-t border-gray-200">
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
+          Price Comparison
+        </h2>
 
-  <div className="mb-6 flex items-center gap-4">
-    <label htmlFor="compare-date" className="font-medium">
-      Select Date:
-    </label>
-    <input
-      id="compare-date"
-      type="date"
-      max={new Date().toISOString().split("T")[0]}
-      value={chartDate}
-      onChange={(e) => setChartDate(e.target.value)}
-      className="border rounded p-2"
-    />
-  </div>
-
-  {isLoading && <p>Loading price trend data...</p>}
-  {error && <p className="text-red-600">Error: {error.message}</p>}
-
-  {priceTrend ? (
-    <>
-      <ResponsiveContainer width="100%" height={300}>
-        <LineChart
-          data={[
-            { name: chartDate, price: priceTrend.previousPrice },
-            { name: "Current", price: priceTrend.currentPrice },
-          ]}
-          margin={{ top: 10, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-
-          {/*  Custom Tooltip to prevent NaN */}
-          <Tooltip
-            content={({ active, payload, label }) => {
-              if (active && payload && payload.length) {
-                const selectedData = payload.find(
-                  (p) => p.payload.name === chartDate
-                );
-                const selectedPrice = selectedData?.value;
-                const currentPrice = priceTrend.currentPrice;
-
-                const difference =
-                  typeof selectedPrice === "number"
-                    ? currentPrice - selectedPrice
-                    : null;
-
-                const isIncrease = difference !== null && difference >= 0;
-
-                return (
-                  <div className="bg-white border border-gray-300 rounded p-3 shadow text-sm text-gray-800">
-                    <p className="font-semibold mb-1"> Date: {label}</p>
-                    {selectedPrice !== undefined && (
-                      <p> Selected Date Price: ৳{selectedPrice}</p>
-                    )}
-                    <p> Current Price: ৳{currentPrice}</p>
-                    {difference !== null && (
-                      <p>
-                         Difference:{" "}
-                        <span
-                          style={{ color: isIncrease ? "green" : "red" }}
-                        >
-                          {isIncrease ? "+" : ""}
-                          {difference} ৳
-                        </span>
-                      </p>
-                    )}
-                  </div>
-                );
-              }
-              return null;
-            }}
+        <div className="mb-6 flex items-center gap-4">
+          <label htmlFor="compare-date" className="font-medium">
+            Select Date:
+          </label>
+          <input
+            id="compare-date"
+            type="date"
+            max={new Date().toISOString().split("T")[0]}
+            value={chartDate}
+            onChange={(e) => setChartDate(e.target.value)}
+            className="border rounded p-2"
           />
+        </div>
 
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="price"
-            name="Price"
-            stroke="#00B795"
-            strokeWidth={2}
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+        {isLoading && <p>Loading price trend data...</p>}
+        {error && <p className="text-red-600">Error: {error.message}</p>}
 
-      <p className="text-center font-semibold mt-4">
-        Difference:{" "}
-        <span
-          style={{
-            color: priceTrend.difference >= 0 ? "green" : "red",
-          }}
-        >
-          {priceTrend.difference >= 0 ? "+" : ""}
-          {priceTrend.difference} ৳
-        </span>
-      </p>
-    </>
-  ) : (
-    chartDate && (
-      <p className="text-gray-600 italic">
-        No data for the selected date.
-      </p>
-    )
-  )}
-</section>
+        {priceTrend ? (
+          <>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart
+                data={[
+                  { name: chartDate, price: priceTrend.previousPrice },
+                  { name: "Current", price: priceTrend.currentPrice },
+                ]}
+                margin={{ top: 10, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+
+                {/*  Custom Tooltip to prevent NaN */}
+                <Tooltip
+                  content={({ active, payload, label }) => {
+                    if (active && payload && payload.length) {
+                      const selectedData = payload.find(
+                        (p) => p.payload.name === chartDate
+                      );
+                      const selectedPrice = selectedData?.value;
+                      const currentPrice = priceTrend.currentPrice;
+
+                      const difference =
+                        typeof selectedPrice === "number"
+                          ? currentPrice - selectedPrice
+                          : null;
+
+                      const isIncrease = difference !== null && difference >= 0;
+
+                      return (
+                        <div className="bg-white border border-gray-300 rounded p-3 shadow text-sm text-gray-800">
+                          <p className="font-semibold mb-1"> Date: {label}</p>
+                          {selectedPrice !== undefined && (
+                            <p> Selected Date Price: ৳{selectedPrice}</p>
+                          )}
+                          <p> Current Price: ৳{currentPrice}</p>
+                          {difference !== null && (
+                            <p>
+                              Difference:{" "}
+                              <span
+                                style={{ color: isIncrease ? "green" : "red" }}
+                              >
+                                {isIncrease ? "+" : ""}
+                                {difference} ৳
+                              </span>
+                            </p>
+                          )}
+                        </div>
+                      );
+                    }
+                    return null;
+                  }}
+                />
+
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="price"
+                  name="Price"
+                  stroke="#00B795"
+                  strokeWidth={2}
+                  activeDot={{ r: 8 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+
+            <p className="text-center font-semibold mt-4">
+              Difference:{" "}
+              <span
+                style={{
+                  color: priceTrend.difference >= 0 ? "green" : "red",
+                }}
+              >
+                {priceTrend.difference >= 0 ? "+" : ""}
+                {priceTrend.difference} ৳
+              </span>
+            </p>
+          </>
+        ) : (
+          chartDate && (
+            <p className="text-gray-600 italic">
+              No data for the selected date.
+            </p>
+          )
+        )}
+      </section>
     </div>
   );
 };
