@@ -71,7 +71,7 @@ const ProductDetails = () => {
         productId: product?._id,
         userEmail: user?.email,
         userName: user?.displayName,
-        productName: product?.name,
+        productName: product?.itemName,
         productImage: product?.image,
         marketName: product?.marketName,
         date: product?.date,
@@ -79,7 +79,10 @@ const ProductDetails = () => {
       };
      await axiosSecure.post(`/watchlist`, watchInfo);
     },
-    onSuccess: () => toast.success("Added to watchlist!"),
+    onSuccess: () => {
+       toast.success("Added to watchlist!")
+       navigate('/dashboard/watchlist')
+    },
     onError: () => toast.error("Failed to add to watchlist."),
   });
 

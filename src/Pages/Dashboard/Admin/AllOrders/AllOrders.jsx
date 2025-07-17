@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import { MdShoppingCart } from "react-icons/md";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const AllOrders = () => {
   const axiosSecure = useAxiosSecure();
@@ -13,6 +14,9 @@ const AllOrders = () => {
       return res.data;
     },
   });
+  if(isLoading){
+    return <Loading></Loading>
+  }
 
   return (
     <div className="p-5 w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">

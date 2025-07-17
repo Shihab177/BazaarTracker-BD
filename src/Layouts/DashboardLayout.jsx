@@ -170,7 +170,7 @@ const DashboardLayout = () => {
                   className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
                 >
                   <FaRegEye />
-                  My Watchlist
+                  Manage Watchlist
                 </NavLink>
               </li>
 
