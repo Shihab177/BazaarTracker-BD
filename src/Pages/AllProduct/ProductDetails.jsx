@@ -106,7 +106,7 @@ const ProductDetails = () => {
       toast.error("Please login to buy product.");
       return;
     }
-    navigate(`/stripe-payment/${id}`);
+    navigate(`/payment/${id}`);
   };
 
   const handleReviewSubmit = (e) => {

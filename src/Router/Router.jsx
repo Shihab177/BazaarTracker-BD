@@ -18,6 +18,7 @@ import AllUsers from "../Pages/Dashboard/Admin/AllUsers/AllUsers";
 import AllProducts from "../Pages/Dashboard/Admin/AllProducts/AllProducts";
 import AllAdvertisements from "../Pages/Dashboard/Admin/AllAdvertisements/AllAdvertisements";
 import ProductDetails from "../Pages/AllProduct/ProductDetails";
+import Payment from "../Pages/Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path:'product-details/:id',
                 Component:ProductDetails
+            },
+            {
+                path:'payment/:productId',
+                Component:Payment
             }
         ]
         
