@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { MdShoppingBasket } from "react-icons/md";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import Swal from "sweetalert2";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const AllProducts = () => {
   const axiosSecure = useAxiosSecure();
@@ -66,17 +67,15 @@ const AllProducts = () => {
   }
   };
 
-  if (isLoading)
-    return (
-      <p className="justify-center min-h-screen flex items-center text-2xl font-bold">
-        Loading products...
-      </p>
-    );
+  if (isLoading){
+    return <Loading></Loading>
+  }
+   
 
   return (
     <div className="p-5 w-6xl mx-auto border border-gray-300 shadow-md rounded-xl my-10">
       <h1 className="text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
-        <MdShoppingBasket /> All Products
+         All Products
       </h1>
 
       <div className="overflow-x-auto rounded-md">
@@ -90,7 +89,14 @@ const AllProducts = () => {
               <th className="text-center">Actions</th>
             </tr>
           </thead>
+         
           <tbody>
+           { products.length === 0 && <tr>
+           <td colSpan="6" className="text-center py-6">
+        <span className="text-2xl font-semibold"> No product available</span>
+      </td>
+    </tr>
+           }
             {products.map((product, i) => (
               <tr key={product._id}>
                 <td>{i + 1}</td>

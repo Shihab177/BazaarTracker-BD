@@ -2,8 +2,9 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
-import Loading from "../../../../Shared/Loading/Loading";
+
 import useAuth from "../../../../hook/useAuth";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const MyOrderList = () => {
   const navigate = useNavigate();
@@ -11,7 +12,12 @@ const MyOrderList = () => {
   const { user } = useAuth();
   const userEmail = user?.email;
 
-  const { data: orders = [], isLoading, isError, error } = useQuery({
+  const {
+    data: orders = [],
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
     queryKey: ["orders", userEmail],
     queryFn: async () => {
       const res = await axiosSecure.get(`/user-orders?email=${userEmail}`);
@@ -20,13 +26,12 @@ const MyOrderList = () => {
     enabled: !!userEmail,
   });
 
-  if (isLoading) return <Loading />;
-  if (isError)
-    return (
-      <p className="text-center text-red-600 mt-10">
-        Error loading orders: {error?.message || "Unknown error"}
-      </p>
-    );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+  if (isError) {
+    return <p className="text-center text-red-600 mt-10"> order not found</p>;
+  }
 
   return (
     <div className="w-6xl mx-auto p-5 my-10 bg-white border-t border-gray-300 rounded-md shadow-md">
@@ -35,7 +40,9 @@ const MyOrderList = () => {
       </h2>
 
       {orders.length === 0 ? (
-        <p className="text-center text-gray-600 text-lg">You have no orders yet.</p>
+        <p className="text-center text-gray-600 text-xl">
+          You have no orders yet.
+        </p>
       ) : (
         <div className="overflow-x-auto rounded-md">
           <table className="table table-zebra w-full text-md font-semibold border border-gray-300">
@@ -50,10 +57,7 @@ const MyOrderList = () => {
             </thead>
             <tbody>
               {orders.map((order) => (
-                <tr
-                  key={order._id}
-                  className=""
-                >
+                <tr key={order._id} className="">
                   <td className="px-6 py-4">{order.productName}</td>
                   <td className="px-6 py-4">{order.marketName}</td>
                   <td className="px-6 py-4">৳{order.pricePerUnit}</td>
@@ -62,7 +66,9 @@ const MyOrderList = () => {
                   </td>
                   <td className="px-6 py-4 text-center">
                     <button
-                      onClick={() => navigate(`/product-details/${order.productId}`)}
+                      onClick={() =>
+                        navigate(`/product-details/${order.productId}`)
+                      }
                       className="btn btn-sm bg-[#00B795] text-white hover:bg-[#01886a] transition"
                     >
                       View Details

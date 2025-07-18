@@ -61,7 +61,7 @@ const AllAdvertisements = () => {
 
   return (
     <div className="mx-auto my-10 border border-gray-300  w-6xl px-4 pb-4 rounded-xl shadow-md">
-       <h1 className="text-3xl text-center  text-black font-semibold mb-6 flex items-center gap-3 mt-5 justify-center"><span><RiAdvertisementLine /></span>All Advertisements</h1>
+       <h1 className="text-3xl text-center  text-black font-semibold mb-6 flex items-center gap-3 mt-5 justify-center">All Advertisements</h1>
       <div className="overflow-x-auto  rounded-md">
         <table className="min-w-full text-left">
           <thead className="bg-[#00B795] text-white text-sm">
@@ -125,7 +125,7 @@ const AllAdvertisements = () => {
             ))}
             {ads.length === 0 && (
               <tr>
-                <td colSpan="5" className="text-center py-6 text-gray-500">
+                <td colSpan="5" className="text-center text-2xl py-6 text-gray-900">
                   No advertisements found.
                 </td>
               </tr>

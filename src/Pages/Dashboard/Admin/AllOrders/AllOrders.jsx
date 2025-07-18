@@ -21,7 +21,7 @@ const AllOrders = () => {
   return (
     <div className="p-5 w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
       <h1 className="text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
-        <MdShoppingCart /> All Orders
+         All Orders
       </h1>
 
       {isLoading ? (
@@ -52,7 +52,7 @@ const AllOrders = () => {
                   <td>{order.marketName}</td>
                   <td>৳ {order.pricePerUnit}</td>
                   <td>{order.userEmail}</td>
-                  <td className="text-blue-700 break-all">{order.transactionId}</td>
+                  <td className="break-all">{order.transactionId}</td>
                   <td>{new Date(order.paidAt).toLocaleString()}</td>
                 </tr>
               ))}

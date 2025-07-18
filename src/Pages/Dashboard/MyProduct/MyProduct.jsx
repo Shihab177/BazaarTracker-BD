@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useAuth from "../../../hook/useAuth";
 import useAxiosSecure from "../../../hook/useAxiosSecure";
-
+import Loading from "../../../Shared/Loading/Loading";
 
 const MyProducts = () => {
   const { user } = useAuth();
@@ -14,7 +14,7 @@ const MyProducts = () => {
   const {
     data: products = [],
     refetch,
-    
+    isLoading
   } = useQuery({
     queryKey: ["my-products", user.email],
     queryFn: async () => {
@@ -51,9 +51,13 @@ const MyProducts = () => {
   document.getElementById("rejected_modal").showModal();
   };
 
+  if(isLoading){
+    return <Loading></Loading>
+  }
+
   return (
     <div className=" w-6xl px-4 pb-4 mx-auto border border-gray-300 shadow-md rounded-xl my-10">
-      <h2 className="text-3xl font-bold my-8 text-center text-[#00B795]">
+      <h2 className="text-3xl font-bold my-8 text-center ">
         {" "}
         My Submitted Products
       </h2>

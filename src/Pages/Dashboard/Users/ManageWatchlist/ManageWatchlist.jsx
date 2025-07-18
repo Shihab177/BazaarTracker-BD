@@ -7,6 +7,7 @@ import useAuth from "../../../../hook/useAuth";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import Loading from "../../../../Shared/Loading/Loading";
 
+
 const ManageWatchlist = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
@@ -50,7 +51,9 @@ const ManageWatchlist = () => {
     });
   };
 
-  if (isLoading) return <Loading />;
+  if (isLoading){
+    return <Loading></Loading>
+  }
 
   return (
     <div className="p-5 w-6xl mx-auto my-10 border border-gray-300 shadow-md rounded-md bg-white">
@@ -58,11 +61,7 @@ const ManageWatchlist = () => {
          Manage Watchlist
       </h2>
 
-      {watchlist.length === 0 ? (
-        <p className="text-center text-gray-600 text-lg">
-          You have no items in your watchlist.
-        </p>
-      ) : (
+     
         <div className="overflow-x-auto rounded-md">
           <table className="table table-zebra w-full text-md font-semibold">
             <thead className="bg-[#00B795] text-white text-[18px]">
@@ -74,6 +73,18 @@ const ManageWatchlist = () => {
               </tr>
             </thead>
             <tbody>
+              {
+                 watchlist.length === 0 &&
+                 <tr>
+                  <td colSpan={4} className="text-center">
+                      <p className=" text-gray-900 text-2xl">
+                          You have no items in your watchlist.
+                     </p>
+                  </td>
+                 </tr>
+        
+      
+              }
               {watchlist.map((item, idx) => (
                 <tr key={item._id} className="border-b border-gray-300">
                   <td className="px-6 py-4">{item.productName}</td>
@@ -98,7 +109,7 @@ const ManageWatchlist = () => {
             </tbody>
           </table>
         </div>
-      )}
+      
     </div>
   );
 };

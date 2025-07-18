@@ -13,46 +13,47 @@ const AddAdvertisement = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const {user}=useAuth()
+  const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [profilePic, setProfilePic] = useState();
-  const [imgloading,setImgLoading]=useState(false)
-  const navigate =useNavigate()
+  const [imgloading, setImgLoading] = useState(false);
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     data.image = profilePic;
     data.status = "Pending";
-    data.vendorEmail= user?.email,
-      data.vendorName=user?.displayName,
-    axiosSecure.post("/add-advertisement", data)
-    .then((res) => {
-      if (res.data.insertedId) {
-        toast.success("advertisement added successfully!");
-        navigate("/dashboard/my-ads");
-        reset();
-      }
-    })
-    .catch(() => {
-            toast.error("Failed to add advertisement.");
-          })
+    (data.vendorEmail = user?.email),
+      (data.vendorName = user?.displayName),
+      axiosSecure
+        .post("/add-advertisement", data)
+        .then((res) => {
+          if (res.data.insertedId) {
+            toast.success("advertisement added successfully!");
+            navigate("/dashboard/my-ads");
+            reset();
+          }
+        })
+        .catch(() => {
+          toast.error("Failed to add advertisement.");
+        });
   };
 
   const handelImageUpload = async (e) => {
     const image = e.target.files[0];
-   setImgLoading(true)
+    setImgLoading(true);
     const formData = new FormData();
     formData.append("image", image);
     const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${
       import.meta.env.VITE_IMAGE_UPLOAD_KEY
     }`;
     const res = await axios.post(imageUploadUrl, formData);
-    console.log(res)
-    setImgLoading(false)
+    console.log(res);
+    setImgLoading(false);
     setProfilePic(res.data.data.url);
   };
 
   return (
     <div className="w-5xl my-10 mx-auto p-8 bg-white border border-gray-300 rounded-lg shadow-xl">
-      <h2 className="text-3xl font-bold mb-6 text-[#00B795] text-center">
+      <h2 className="text-3xl font-bold mb-6 text-center">
         Create Advertisement
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -128,9 +129,7 @@ const AddAdvertisement = () => {
           {errors.image && (
             <p className="text-red-500 text-sm mt-1">{errors.image.message}</p>
           )}
-          {
-            imgloading && <p>loading...</p>
-          }
+          {imgloading && <p>loading...</p>}
         </div>
 
         {/* Status */}

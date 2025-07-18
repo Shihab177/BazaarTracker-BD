@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import { FaUsers } from "react-icons/fa";
+import Loading from "../../../../Shared/Loading/Loading";
 
 const AllUsers = () => {
   const [search, setSearch] = useState("");
@@ -30,13 +31,14 @@ const AllUsers = () => {
       toast.error(" Failed to update role.");
     }
   };
+  if(isLoading){
+    return <Loading></Loading>
+  }
 
   return (
     <div className="p-5 w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
       <h1 className="text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
-        <span>
-          <FaUsers />
-        </span>{" "}
+     
         All Users
       </h1>
 

@@ -6,6 +6,7 @@ import useAxiosSecure from "../../../hook/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import axios from "axios";
+import Loading from "../../../Shared/Loading/Loading";
 
 const MyAdvertisements = () => {
   const { user } = useAuth();
@@ -22,7 +23,7 @@ const [profilePic, setProfilePic] = useState();
     formState: { errors },
   } = useForm();
 
-  const { data: advertisements = [], refetch } = useQuery({
+  const { data: advertisements = [], refetch,isLoading } = useQuery({
     queryKey: ["my-advertisements", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/advertisements?email=${user?.email}`);
@@ -97,6 +98,9 @@ const [profilePic, setProfilePic] = useState();
     const res = await axios.post(imageUploadUrl, formData);
     setProfilePic(res.data.data.url);
   };
+  if(isLoading){
+    return <Loading></Loading>
+  }
 
   return (
     <div className="pb-4 px-4 w-6xl mx-auto border rounded-xl shadow-md border-gray-300 my-10 ">

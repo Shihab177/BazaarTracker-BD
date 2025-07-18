@@ -73,7 +73,7 @@ const AddProduct = () => {
     <div className="">
       
       <div className="w-5xl mx-auto bg-white p-8 shadow-xl rounded-xl my-10 border border-gray-300">
-        <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]">
+        <h2 className="text-3xl font-bold mb-8 text-center">
         {" "}
         Add New Product
       </h2>
