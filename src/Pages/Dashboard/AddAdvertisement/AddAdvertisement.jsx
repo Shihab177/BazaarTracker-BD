@@ -16,6 +16,7 @@ const AddAdvertisement = () => {
   const {user}=useAuth()
   const axiosSecure = useAxiosSecure();
   const [profilePic, setProfilePic] = useState();
+  const [imgloading,setImgLoading]=useState(false)
   const navigate =useNavigate()
   const onSubmit = (data) => {
     data.image = profilePic;
@@ -37,13 +38,15 @@ const AddAdvertisement = () => {
 
   const handelImageUpload = async (e) => {
     const image = e.target.files[0];
-
+   setImgLoading(true)
     const formData = new FormData();
     formData.append("image", image);
     const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${
       import.meta.env.VITE_IMAGE_UPLOAD_KEY
     }`;
     const res = await axios.post(imageUploadUrl, formData);
+    console.log(res)
+    setImgLoading(false)
     setProfilePic(res.data.data.url);
   };
 
@@ -125,6 +128,9 @@ const AddAdvertisement = () => {
           {errors.image && (
             <p className="text-red-500 text-sm mt-1">{errors.image.message}</p>
           )}
+          {
+            imgloading && <p>loading...</p>
+          }
         </div>
 
         {/* Status */}
@@ -145,6 +151,7 @@ const AddAdvertisement = () => {
         <div className="text-center">
           <button
             type="submit"
+            disabled={imgloading}
             className="px-8 py-3 bg-[#00B795] hover:bg-[#22A587] text-white font-semibold rounded-md transition"
           >
             Submit Advertisement

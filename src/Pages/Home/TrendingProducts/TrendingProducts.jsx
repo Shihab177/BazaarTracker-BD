@@ -16,7 +16,7 @@ const mostTracked = [
 
 const TrendingProducts = () => {
   return (
-    <section className="py-16 px-4 md:px-12  bg-[#00B795] rounded-md">
+    <section className=" pb-4 pt-8 md:px-12  bg-[#00B795] rounded-md">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const TrendingProducts = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-extrabold flex items-center text-white justify-center gap-2">
+        <h2 className="text-4xl font-extrabold  flex items-center text-white justify-center gap-2">
           <TrendingUp className=" w-8 h-8" />
           Trending Products
         </h2>
