@@ -17,11 +17,12 @@ import {
   FaShoppingCart,
   FaUsers,
 } from "react-icons/fa";
+import useUserRole from "../hook/useUserRole";
 
 
 const DashboardLayout = () => {
- 
-  const role ='user'
+ const {role,roleLoading}=useUserRole()
+  console.log(role)
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -63,7 +64,7 @@ const DashboardLayout = () => {
           
           <Link className="flex gap-3 items-center" to='/'> <Logo></Logo> <span className="text-[24px] font-semibold">BazaarTracker <span className="text-[#00B795] ">BD</span> </span></Link>
           
-          {role === "vendor" && (
+          {!roleLoading && role === "vendor" && (
             <>
             
               
@@ -109,7 +110,7 @@ const DashboardLayout = () => {
               </li>
             </>
           )}
-          {role === "admin" && (
+          {!roleLoading && role === "admin" && (
             <>
               <li className=" mt-5 gap-2">
                 <NavLink
@@ -152,7 +153,7 @@ const DashboardLayout = () => {
               </li>
             </>
           )}
-          {role === "user" && (
+          {!roleLoading && role === "user" && (
             <>
               <li className=" mt-5 gap-2">
                 <NavLink

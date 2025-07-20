@@ -23,6 +23,11 @@ import AllOrders from "../Pages/Dashboard/Admin/AllOrders/AllOrders";
 import ViewPriceTrends from "../Pages/Dashboard/Users/ViewPriceTrends/ViewPriceTrends";
 import ManageWatchlist from "../Pages/Dashboard/Users/ManageWatchlist/ManageWatchlist";
 import MyOrderList from "../Pages/Dashboard/Users/MyOrderList/MyOrderList";
+import Forbidden from "../Pages/Forbidden/Forbidden";
+import AdminRoute from "../Routes/AdminRoute";
+import VendorRoute from "../Routes/VendorRoute";
+import Profile from "../Pages/Profilr/Profile";
+import AdminUpdateProduct from "../Pages/Dashboard/Admin/AllProducts/AdminUpdateProduct";
 
 
 export const router = createBrowserRouter([
@@ -50,6 +55,14 @@ export const router = createBrowserRouter([
             {
                 path:'payment/:productId',
                 Component:Payment
+            },
+            {
+                path:'Forbidden',
+                Component:Forbidden
+            },
+            {
+                path:'profile',
+                Component:Profile
             }
         ]
         
@@ -75,41 +88,54 @@ export const router = createBrowserRouter([
             //vendor
             {
                 path:'add-product',
-                Component:AddProduct
+                element:<VendorRoute><AddProduct></AddProduct></VendorRoute>
+               
             },
             {
                 path:'my-products',
-                Component:MyProduct
+                element:<VendorRoute><MyProduct></MyProduct></VendorRoute>
+                
             },
             {
                 path:'add-ads',
-                Component:AddAdvertisement
+                element:<VendorRoute><AddAdvertisement></AddAdvertisement></VendorRoute>
+                
             },
             {
                 path:'my-ads',
-                Component:MyAdvertisements
+                element:<VendorRoute><MyAdvertisements></MyAdvertisements></VendorRoute>
+               
             },
             {
                 path:'update-product/:id',
-                Component:UpdateProduct
+                element:<VendorRoute><UpdateProduct></UpdateProduct></VendorRoute>
+              
             },
 
             //admin
             {
                 path:'all-users',
-                Component:AllUsers
+                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
                 path:'all-products',
-                Component:AllProducts
+                element:<AdminRoute><AllProducts></AllProducts></AdminRoute>
+               
             },
             {
                 path:'all-ads',
-                Component:AllAdvertisements
+                element:<AdminRoute><AllAdvertisements></AllAdvertisements></AdminRoute>
+               
             },
             {
                 path:'all-orders',
-                Component:AllOrders
+                element:<AdminRoute><AllOrders></AllOrders></AdminRoute>
+             
+            },
+            {
+                path:'admin-updateProduct/:id',
+                element:<AdminRoute><AdminUpdateProduct></AdminUpdateProduct></AdminRoute>
+             
             },
             //user route
             {

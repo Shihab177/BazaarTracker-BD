@@ -129,7 +129,7 @@ const AddAdvertisement = () => {
           {errors.image && (
             <p className="text-red-500 text-sm mt-1">{errors.image.message}</p>
           )}
-          {imgloading && <p>loading...</p>}
+          {imgloading && <p className="text-red-500">loading...</p>}
         </div>
 
         {/* Status */}

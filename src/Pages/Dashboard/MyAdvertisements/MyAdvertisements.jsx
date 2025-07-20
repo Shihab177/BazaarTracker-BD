@@ -104,7 +104,7 @@ const [profilePic, setProfilePic] = useState();
 
   return (
     <div className="pb-4 px-4 w-6xl mx-auto border rounded-xl shadow-md border-gray-300 my-10 ">
-      <h2 className="text-3xl font-bold text-center my-8 text-[#00B795]">
+      <h2 className="text-3xl font-bold text-center my-8">
         My Advertisements
       </h2>
 
@@ -133,14 +133,14 @@ const [profilePic, setProfilePic] = useState();
                     {ad.status}
                   </span>
                 </td>
-                <td className="space-x-2">
-                  <label
+                <td className="space-x-2 flex">
+                  <button
                     htmlFor="edit_ad_modal"
                     onClick={() => openEditModal(ad)}
                     className="bg-[#00B795] hover:bg-[#22A587] px-4 py-2 text-sm font-bold text-white rounded-md cursor-pointer"
                   >
                     Update
-                  </label>
+                  </button>
                   <button
                     onClick={() => handleDelete(ad._id)}
                     className="rounded-md bg-red-500 hover:bg-red-600 text-sm px-4 py-2 font-bold text-white"

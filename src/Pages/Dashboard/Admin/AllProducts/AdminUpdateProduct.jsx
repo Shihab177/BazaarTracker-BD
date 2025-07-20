@@ -4,13 +4,15 @@ import { useNavigate, useParams } from "react-router";
 import DatePicker from "react-datepicker";
 import { format } from "date-fns";
 import { toast } from "react-toastify";
-import useAxiosSecure from "../../../../hook/useAxiosSecure";
-import useAuth from "../../../../hook/useAuth";
+
 import "react-datepicker/dist/react-datepicker.css";
 import { useQuery } from "@tanstack/react-query";
+import useAuth from "../../../../hook/useAuth";
+import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import useUserRole from "../../../../hook/useUserRole";
 
-const UpdateProduct = () => {
+
+const  AdminUpdateProduct = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
@@ -32,7 +34,7 @@ const UpdateProduct = () => {
   const { data = {}, refetch } = useQuery({
     queryKey: ["update-product", user.email],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/product/${id}`);
+      const res = await axiosSecure.get(`/admin-product/${id}`);
       return res.data;
     },
   });
@@ -78,7 +80,7 @@ const UpdateProduct = () => {
     };
 
     try {
-      const res = await axiosSecure.patch(`/product/${id}`, updatedData);
+      const res = await axiosSecure.patch(`/admin-product/${id}`, updatedData);
       if (res.data.modifiedCount > 0) {
         toast.success("Product updated successfully!");
        !roleLoading && role === 'admin' && navigate('/dashboard/all-products')
@@ -244,4 +246,7 @@ const UpdateProduct = () => {
   );
 };
 
-export default UpdateProduct;
+
+
+
+export default AdminUpdateProduct;

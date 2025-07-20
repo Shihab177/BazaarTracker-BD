@@ -14,12 +14,14 @@ import {
 } from "recharts";
 
 import Loading from "../../Shared/Loading/Loading";
-import useAxios from "../../hook/useAxios";
+
 import useAuth from "../../hook/useAuth";
+import useAxiosSecure from "../../hook/useAxiosSecure";
+// import axios from "axios";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const axiosSecure = useAxios();
+  const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
   const { user, role } = useAuth();
   const queryClient = useQueryClient();
@@ -27,7 +29,6 @@ const ProductDetails = () => {
   const [userReview, setUserReview] = useState({ rating: 0, comment: "" });
   const [chartDate, setChartDate] = useState("");
 
-  // Fetch product details
   const { data: product = {}, isLoading: productLoading } = useQuery({
     queryKey: ["product-details", id],
     queryFn: async () => {
@@ -35,7 +36,7 @@ const ProductDetails = () => {
       return res.data;
     },
   });
-
+  
   // Fetch reviews
   const { data: reviews = [], isLoading: reviewLoading } = useQuery({
     queryKey: ["product-reviews", id],
@@ -162,11 +163,11 @@ const ProductDetails = () => {
           Item Prices
         </h2>
         <ul className="list-disc list-inside space-y-1 text-gray-800">
-          {product.prices && product.prices.length > 0 ? (
-            product.prices.map((item, idx) => (
+          {product?.prices && product?.prices.length > 0 ? (
+            product?.prices.map((item, idx) => (
               <li key={idx}>
                 <span className="capitalize">
-                  {item.name || product.itemName}
+                  {item.name || product?.itemName}
                 </span>{" "}
                 — ৳{item.pricePerUnit || item.price} per kg{" "}
                 <span className="text-sm text-gray-800">
@@ -176,8 +177,8 @@ const ProductDetails = () => {
             ))
           ) : (
             <li>
-              <span className="capitalize">{product.itemName}</span> — ৳
-              {product.pricePerUnit} per kg
+              <span className="capitalize">{product?.itemName}</span> — ৳
+              {product?.pricePerUnit} per kg
             </li>
           )}
         </ul>
@@ -187,10 +188,10 @@ const ProductDetails = () => {
       <section className="bg-gray-50 rounded p-6 shadow">
         <h2 className="text-xl font-semibold mb-2">Vendor Information</h2>
         <p>
-          <strong>Name:</strong> {product.vendorName}
+          <strong>Name:</strong> {product?.vendorName}
         </p>
         <p>
-          <strong>Email:</strong> {product.vendorEmail}
+          <strong>Email:</strong> {product?.vendorEmail}
         </p>
       </section>
 

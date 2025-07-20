@@ -7,18 +7,21 @@ import { MdShoppingBasket } from "react-icons/md";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import Loading from "../../../../Shared/Loading/Loading";
+import useAuth from "../../../../hook/useAuth";
 
 const AllProducts = () => {
   const axiosSecure = useAxiosSecure();
   const queryClient = useQueryClient();
   const [rejectionReason, setRejectionReason] = useState("");
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const {user}=useAuth()
   const { data: products = [], isLoading } = useQuery({
     queryKey: ["all-products"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/all-products");
+      const res = await axiosSecure.get(`/all-products?email=${user?.email}`);
       return res.data;
     },
+    enabled:!!user?.email
   });
 
   const handleApprove = async (id) => {
@@ -58,7 +61,7 @@ const AllProducts = () => {
 
   if (result.isConfirmed) {
     try {
-      await axiosSecure.delete(`/product/${id}`);
+      await axiosSecure.delete(`/admin-product/${id}`);
       toast.success(" Product deleted");
       queryClient.invalidateQueries(["all-products"]);
     } catch {
@@ -137,7 +140,7 @@ const AllProducts = () => {
                     </>
                   )}
                   <Link
-                    to={`/dashboard/update-product/${product._id}`}
+                    to={`/dashboard/admin-updateProduct/${product._id}`}
                     className="btn btn-warning btn-sm text-white"
                   >
                     Update

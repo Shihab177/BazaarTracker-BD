@@ -30,7 +30,7 @@ const ProductSection = () => {
     >
       <div className=" px-4">
         <h2 className="text-4xl font-bold text-center mb-10">
-          Latest Market Prices (Last 3 Days)
+          Latest Market Prices
         </h2>
         {isLoading && (
           <p className="text-center py-20 text-lg">Loading products...</p>

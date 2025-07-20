@@ -56,7 +56,7 @@ const AddProduct = () => {
 
     //post server
     axiosSecure
-      .post("/add-product", formattedData)
+      .post(`/add-product?email=${user?.email}`, formattedData)
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Product added successfully!");

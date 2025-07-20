@@ -47,6 +47,7 @@ const Navbar = () => {
           {user && (
             <div>
               <img
+              onClick={()=> navigate('profile')}
                 className="w-16 h-16 rounded-full"
                 src={user?.photoURL}
                 alt="profile"

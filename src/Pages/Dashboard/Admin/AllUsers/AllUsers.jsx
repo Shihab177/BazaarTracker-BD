@@ -4,11 +4,13 @@ import { toast } from "react-toastify";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import { FaUsers } from "react-icons/fa";
 import Loading from "../../../../Shared/Loading/Loading";
+import useAuth from "../../../../hook/useAuth";
 
 const AllUsers = () => {
   const [search, setSearch] = useState("");
   const queryClient = useQueryClient();
   const axiosSecure = useAxiosSecure();
+  const {user}=useAuth()
   const {
     data: users = [],
     isLoading,
@@ -16,7 +18,7 @@ const AllUsers = () => {
   } = useQuery({
     queryKey: ["users", search],
     queryFn: async () => {
-      const url = search ? `/users?search=${search}` : "/users";
+      const url = search ? `/users?search=${search}&email=${user?.email}` : `/users?email=${user?.email}`;
       const res = await axiosSecure.get(url);
       return res.data;
     },
@@ -31,9 +33,9 @@ const AllUsers = () => {
       toast.error(" Failed to update role.");
     }
   };
-  if(isLoading){
-    return <Loading></Loading>
-  }
+  // if(isLoading){
+  //   return <Loading></Loading>
+  // }
 
   return (
     <div className="p-5 w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
