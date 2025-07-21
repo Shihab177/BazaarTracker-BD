@@ -57,6 +57,35 @@ const AddAdvertisement = () => {
         Create Advertisement
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <div className="flex gap-4 w-full">
+          {/* Vendor Email */}
+          <div className="w-[50%]">
+            <label className="block mb-1 font-medium" htmlFor="vendorEmail">
+              Vendor Email
+            </label>
+            <input
+              id="vendorEmail"
+              type="email"
+              value={user?.email || ""}
+              readOnly
+              className="w-full px-4 py-2 border border-gray-300 bg-gray-100 rounded-md cursor-not-allowed"
+            />
+          </div>
+
+          {/* Vendor Name */}
+          <div className="w-[50%]">
+            <label className="block mb-1 font-medium" htmlFor="vendorName">
+              Vendor Name
+            </label>
+            <input
+              id="vendorName"
+              type="text"
+              value={user?.displayName || ""}
+              readOnly
+              className="w-full px-4 py-2 border border-gray-300 bg-gray-100 rounded-md cursor-not-allowed"
+            />
+          </div>
+        </div>
         {/* Ad Title */}
         <div>
           <label className="block mb-1 font-medium" htmlFor="adTitle">
