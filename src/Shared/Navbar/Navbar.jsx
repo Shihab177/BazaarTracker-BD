@@ -29,11 +29,11 @@ const Navbar = () => {
           <div className="mx-4">
             <ul className="text-[18px] flex gap-6 justify-between font-semibold">
               <li>
-                <NavLink to="/" className="hover:text-[#22A587]">
+                <NavLink to="/"  className={({ isActive }) => isActive ? "border-b-2 hover:text-[#22A587]" : "hover:text-[#22A587]"}>
                   Home
                 </NavLink>
               </li>
-              <NavLink to='AllProduct' className="hover:text-[#22A587]">All Products </NavLink>
+              <NavLink to='AllProduct' className={({ isActive }) => isActive ? "border-b-2 hover:text-[#22A587]" : "hover:text-[#22A587]"}>All Products </NavLink>
             </ul>
           </div>
 

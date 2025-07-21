@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 const axiosInstance = axios.create({
-      baseURL: "http://localhost:7000/"
+      baseURL: "https://bazaar-tracker-bd-server.vercel.app"
 })
 const useAxios = () => {
     return axiosInstance

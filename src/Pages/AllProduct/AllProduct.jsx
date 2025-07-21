@@ -109,7 +109,7 @@ const AllProducts = () => {
             <img
               src={product.image}
               alt={product.itemName}
-              className="w-full h-48 object-cover rounded-md mb-4"
+              className="w-full h-48  rounded-md mb-4"
             />
             <h3 className="text-xl font-medium text-gray-900">
               <span className="font-semibold">Product Name:</span> {product.itemName}

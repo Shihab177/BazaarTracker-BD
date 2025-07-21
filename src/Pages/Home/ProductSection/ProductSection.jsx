@@ -41,7 +41,7 @@ const ProductSection = () => {
           </p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
-            {products.map((product) => (
+            {products?.map((product) => (
               <motion.div
                 key={product._id}
                 whileHover={{ scale: 1.03 }}
@@ -50,7 +50,7 @@ const ProductSection = () => {
                 <img
                   src={product.image}
                   alt={product.productName}
-                  className="w-full h-48 object-cover rounded-md mb-4"
+                  className="w-full h-48  rounded-md mb-4"
                 />
                 <h3 className="text-xl font-semibold text-gray-600 mb-1">
                   {" "}

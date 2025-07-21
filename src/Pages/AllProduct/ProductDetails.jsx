@@ -17,13 +17,15 @@ import Loading from "../../Shared/Loading/Loading";
 
 import useAuth from "../../hook/useAuth";
 import useAxiosSecure from "../../hook/useAxiosSecure";
+import useUserRole from "../../hook/useUserRole";
 // import axios from "axios";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const { user, role } = useAuth();
+  const { user} = useAuth();
+   const {role,roleLoading}=useUserRole()
   const queryClient = useQueryClient();
 
   const [userReview, setUserReview] = useState({ rating: 0, comment: "" });
@@ -84,7 +86,16 @@ const ProductDetails = () => {
        toast.success("Added to watchlist!")
        navigate('/dashboard/watchlist')
     },
-    onError: () => toast.error("Failed to add to watchlist."),
+    onError: (error) => {
+      const msg = error?.response?.data?.message;
+
+    if (msg === "Already in watchlist") {
+      toast.warning(" Already in watchlist!");
+    } else {
+      toast.error(" Failed to add to watchlist. Please try again.");
+    }
+  },
+    
   });
 
   // Mutation to submit review
@@ -199,6 +210,7 @@ const ProductDetails = () => {
       <div className="flex flex-wrap gap-4 justify-center my-3">
         <button
           disabled={
+            roleLoading ||
             role === "admin" ||
             role === "vendor" ||
             addToWatchlistMutation.isLoading
@@ -208,7 +220,7 @@ const ProductDetails = () => {
             addToWatchlistMutation.mutate();
           }}
           className={`px-6 py-3 rounded text-white font-semibold transition ${
-            role === "admin" || role === "vendor"
+          roleLoading ||  role === "admin" || role === "vendor"
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-green-600 hover:bg-green-700"
           }`}
@@ -218,7 +230,17 @@ const ProductDetails = () => {
 
         <button
           onClick={handleBuyProduct}
-          className="px-6 py-3 bg-[#00B795] hover:bg-[#22A587] rounded text-white font-semibold transition"
+          disabled={
+            roleLoading ||
+            role === "admin" ||
+            role === "vendor" ||
+            addToWatchlistMutation.isLoading
+          }
+          className={`px-6 py-3  rounded text-white font-semibold transition ${
+          roleLoading ||  role === "admin" || role === "vendor"
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-[#00B795] hover:bg-[#22A587]"
+          }`}
         >
           Buy Product
         </button>
