@@ -3,6 +3,7 @@ import React from 'react';
 import Loading from '../Shared/Loading/Loading';
 import useAuth from '../hook/useAuth';
 import useUserRole from '../hook/useUserRole';
+import { Navigate } from 'react-router';
 
 const VendorRoute = ({children}) => {
    const { user, loading } = useAuth();

@@ -7,7 +7,7 @@ import AdvertisementHighlights from './AdvertisementHighlights/AdvertisementHigh
 
 const Home = () => {
     return (
-        <div className='mt-22 mb-20'>
+        <div className='md:mt-22 mt-7 mb-20'>
            <Banner></Banner>
            <ProductSection></ProductSection>
            <AdvertisementHighlights></AdvertisementHighlights>

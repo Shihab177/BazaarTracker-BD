@@ -51,6 +51,7 @@ const DashboardLayout = () => {
           </div>
           <div className="mx-2 flex-1 px-2 ">Dashboard</div>
         </div>
+        
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">
@@ -61,9 +62,9 @@ const DashboardLayout = () => {
         ></label>
         <ul className="menu   bg-base-200  text-base-content text-[22px] min-h-full w-80 p-4 shadow-2xl">
           {/* Sidebar content here */}
-          
+         
           <Link className="flex gap-3 items-center" to='/'> <Logo></Logo> <span className="text-[24px] font-semibold">BazaarTracker <span className="text-[#00B795] ">BD</span> </span></Link>
-          
+           {roleLoading && <p className="w-full text-center font-semibold">Loading.....</p>}
           {!roleLoading && role === "vendor" && (
             <>
             
