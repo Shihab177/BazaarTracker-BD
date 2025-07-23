@@ -31,7 +31,7 @@ const  AdminUpdateProduct = () => {
       prices: [],
     },
   });
-  const { data = {}, refetch } = useQuery({
+  const { data = {}, } = useQuery({
     queryKey: ["update-product", user.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/admin-product/${id}`);

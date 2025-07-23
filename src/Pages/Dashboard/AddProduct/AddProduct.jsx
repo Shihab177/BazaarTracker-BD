@@ -47,11 +47,17 @@ const AddProduct = () => {
       vendorEmail: user?.email,
       vendorName: user?.displayName,
       date: new Date().toISOString().split("T")[0],
-      prices: data.prices.map((p) => ({
-        date: format(p.date, "yyyy-MM-dd"),
-        price: Number(p.price),
-      })),
-      pricePerUnit: Number(data.pricePerUnit),
+      marketName: data.marketName?.trim() || "",
+      marketDescription: data.marketDescription?.trim() || "",
+      itemName: data.itemName?.trim() || "",
+      itemDescription: data.itemDescription?.trim() || "",
+      image: data.image?.trim() || "",
+      prices:
+        data.prices?.map((p) => ({
+          date: format(p.date, "yyyy-MM-dd"),
+          price: Number(p.price),
+        })) || [],
+      pricePerUnit: Number(data.pricePerUnit || 0),
     };
 
     //post server
@@ -71,12 +77,11 @@ const AddProduct = () => {
 
   return (
     <div className="">
-      
       <div className="xl:w-5xl mx-auto bg-white p-8 shadow-xl rounded-xl my-10 border border-gray-300">
         <h2 className="text-3xl font-bold mb-8 text-center">
-        {" "}
-        Add New Product
-      </h2>
+          {" "}
+          Add New Product
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Vendor Info */}
           <div className="grid md:grid-cols-2 gap-4">
@@ -93,7 +98,7 @@ const AddProduct = () => {
               <label className="font-medium">Vendor Name</label>
               <input
                 type="text"
-                value={user?.displayName }
+                value={user?.displayName}
                 readOnly
                 className="w-full px-4 py-2 border border-gray-300 bg-white rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
               />
@@ -170,12 +175,10 @@ const AddProduct = () => {
             <input
               type="text"
               value={new Date().toISOString().split("T")[0]}
-                readOnly
+              readOnly
               className="w-full px-4 py-2 border border-gray-300 bg-white rounded
             focus:outline-none focus:ring-2 focus:ring-[#00B795]"
             />
-            
-            
           </div>
 
           {/* Image */}
@@ -208,9 +211,9 @@ const AddProduct = () => {
                   {...register(`prices.${index}.price`, { required: true })}
                   className="w-full px-4 py-2 border border-gray-300 bg-white rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
                 />
-                {
-                  errors.prices?.[index]?.price && <p className="text-red-500">price is required</p>
-                }
+                {errors.prices?.[index]?.price && (
+                  <p className="text-red-500">price is required</p>
+                )}
                 <button
                   type="button"
                   onClick={() => remove(index)}
