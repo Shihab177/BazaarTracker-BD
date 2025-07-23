@@ -69,6 +69,8 @@ const ViewPriceTrends = () => {
       {/* Sidebar */}
       <div className="md:w-1/4 bg-white rounded-xl border border-gray-300 shadow p-4">
         <h2 className="text-xl font-semibold mb-4">Tracked Items</h2>
+        <hr />
+        <p className="text-[16px] font-medium mb-3 mt-3 text-green-400">Select One</p>
        <div className="max-h-[450px] overflow-y-auto">
          {loadingItems ? (
           <p>Loading...</p>

@@ -108,10 +108,10 @@ console.log(productId)
     }
   };
   return (
-    <div className="mt-38">
+    <div className="md:mt-38 mt-20 px-2">
       <form
         onSubmit={handelSubmit}
-        className="p-6 space-y-4 bg-white rounded-xl shadow-md w-full max-w-md mx-auto"
+        className="p-6 space-y-4 bg-white border border-gray-300 rounded-xl shadow-md w-full max-w-md mx-auto"
       >
         <CardElement className=" p-2 border rounded"></CardElement>
         <button

@@ -26,10 +26,10 @@ const ProductSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="mt-25 pb-10"
+      className="lg:mt-25 mt-12 pb-10"
     >
       <div className=" px-4">
-        <h2 className="text-4xl font-bold text-center mb-10">
+        <h2 className="md:text-4xl text-[24px] font-bold text-center mb-5 md:mb-10">
           Latest Market Prices
         </h2>
         {isLoading && (

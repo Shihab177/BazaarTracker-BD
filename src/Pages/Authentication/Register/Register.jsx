@@ -40,7 +40,7 @@ const Register = () => {
         //update profile in firebase
         const userProfile = {
           displayName:data.name,
-          photoURL: profilePic
+          photoURL: profilePic || "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg"
         }
         updateUserProfile(userProfile)
         .then(()=>{
@@ -64,14 +64,14 @@ const Register = () => {
   };
      
   return (
-     <div className="flex flex-col my-40 justify-center">
+     <div className="flex flex-col mt-24 mb-15 mx-3 md:mx-0 md:my-40 justify-center">
       <div className="flex flex-col items-center">
         <Logo />
         <h1 className="text-2xl font-semibold mt-4 mb-7">Create an Account</h1>
       </div>
 
       <form
-        className="w-[530px] mx-auto"
+        className="md:w-[530px] mx-auto"
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >

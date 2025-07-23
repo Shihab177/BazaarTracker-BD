@@ -35,7 +35,7 @@ const newsData = [
 
 const MarketNews = () => {
   return (
-    <section className="py-16 px-4 md:px-12 bg-gradient-to-b ">
+    <section className="md:pt-16  pt-12 px-4 md:px-12 bg-gradient-to-b ">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,8 +43,8 @@ const MarketNews = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-extrabold text-gray-900 flex justify-center items-center gap-3">
-          <FaRegNewspaper className="text-[#00B795] text-4xl" />
+        <h2 className="md:text-4xl text-[24px] font-extrabold text-gray-900 flex justify-center items-center gap-2 md:gap-3">
+          <FaRegNewspaper className="text-[#00B795] md:text-4xl" />
           Market News & Updates
         </h2>
         <p className="text-gray-600 mt-3 text-lg max-w-xl mx-auto">

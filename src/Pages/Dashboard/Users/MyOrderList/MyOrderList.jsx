@@ -34,8 +34,8 @@ const MyOrderList = () => {
   }
 
   return (
-    <div className="w-6xl mx-auto p-5 my-10 bg-white border-t border-gray-300 rounded-md shadow-md">
-      <h2 className="text-3xl font-semibold mb-6 text-center text-black">
+    <div className="max-w-6xl mx-auto p-5 my-10 bg-white border-t border-gray-300 rounded-md shadow-md">
+      <h2 className="md:text-3xl text-2xl font-semibold mb-6 text-center text-black">
         My Order List
       </h2>
 
@@ -44,8 +44,8 @@ const MyOrderList = () => {
           You have no orders yet.
         </p>
       ) : (
-        <div className="overflow-x-auto rounded-md">
-          <table className="table table-zebra w-full text-md font-semibold border border-gray-300">
+        <div className="overflow-x-auto w-full rounded-md">
+          <table className="table  table-zebra min-w-[800px] text-md font-semibold border border-gray-300">
             <thead className="bg-[#00B795] text-white text-lg">
               <tr>
                 <th className="px-6 py-3">Product Name</th>

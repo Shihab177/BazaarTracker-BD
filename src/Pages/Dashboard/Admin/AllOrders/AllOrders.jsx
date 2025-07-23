@@ -19,7 +19,7 @@ const AllOrders = () => {
   }
 
   return (
-    <div className="p-5 w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
+    <div className="p-5 max-w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
       <h1 className="text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
          All Orders
       </h1>
@@ -29,10 +29,10 @@ const AllOrders = () => {
       ) : isError ? (
         <p className="text-red-600">Error fetching orders.</p>
       ) : orders.length === 0 ? (
-        <p className="text-2xl text-center font-semibold">No orders found.</p>
+        <p className="text-2xl md:text-3xl text-center font-semibold">No orders found.</p>
       ) : (
-        <div className="overflow-x-auto rounded-md">
-          <table className="table table-zebra text-md font-semibold w-full">
+        <div className="overflow-x-auto w-full rounded-md">
+          <table className="table table-zebra text-md mx-auto font-semibold max-w-[800px]">
             <thead className="bg-[#00B795] text-white text-[18px]">
               <tr>
                 <th>#</th>

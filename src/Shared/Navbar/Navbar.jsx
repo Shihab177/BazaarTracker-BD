@@ -40,27 +40,27 @@ const Navbar = () => {
     };
   }, [menu]);
   return (
-    <nav className="fixed bg-[#FFFFFF] top-0 left-0 w-full md:h-[96px] z-40 shadow-md">
-      <div className="flex items-center md:py-4 py-3 px-2 md:px-0 md:container mx-auto">
-        <div className="flex gap-4 items-center w-[50%] md:w-3/12">
-          <div className="md:flex hidden">
+    <nav className="fixed bg-[#FFFFFF] top-0 left-0 w-full lg:h-[96px] z-40 shadow-md">
+      <div className="flex items-center lg:py-4 md:py-3  py-4 px-2 xl:px-0  md:container mx-auto">
+        <div className="flex gap-4 items-center w-[60%] md:w-3/12">
+          <div className="lg:flex hidden">
             {" "}
             <Logo></Logo>
           </div>
           <button ref={buttonRef} className="md:hidden" onClick={handelMenu}>
-            <CiMenuFries />
+            <CiMenuFries size={27}/>
           </button>
 
-          <h1 className="md:text-2xl text-[16px] font-bold">
+          <h1 className="lg:text-2xl md:text-[20px] text-[16px] font-bold">
             BazaarTracker <span className="text-[#00B795]">BD</span>
           </h1>
         </div>
 
         {/*NavLink profile and btn */}
-        <div className=" md:w-9/12 flex  w-[50%] items-center md:gap-6 gap-2 justify-end">
+        <div className=" md:w-9/12 flex  w-[40%] items-center md:gap-6 gap-2 justify-end">
           {/* Menu Links */}
           <div className="mx-4 hidden md:flex">
-            <ul className="text-[18px] flex gap-6 justify-between font-semibold">
+            <ul className="lg:text-[18px] text-[16px] flex gap-6 justify-between font-semibold">
               <li>
                 <NavLink
                   to="/"
@@ -90,7 +90,7 @@ const Navbar = () => {
             <div className="md:flex hidden">
               <Link
                 to="/dashboard"
-                className="text-[18px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2"
+                className="lg:text-[18px] text-[16px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2"
               >
                 <MdDashboard size={20} /> Dashboard
               </Link>
@@ -140,11 +140,12 @@ const Navbar = () => {
       {menu && (
         <div
           ref={menuRef}
-          className="w-[60%] absolute top-[-18] p-4 bg-yellow-100 z-50 h-screen rounded-sm"
+          className="w-[60%] absolute top-[18] p-4 bg-yellow-100 z-50 h-screen rounded-sm"
         >
           <div className="text-[16px] font-semibold flex flex-col gap-2">
+            <NavLink to="profile">Profile</NavLink>
             <NavLink to="/">Home</NavLink>
-
+     
             <NavLink to="/AllProduct">All Products</NavLink>
 
             {user && (

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import img from "../../../assets/bannerimg.jpg"
+import { Link } from "react-router";
 const Banner = () => {
   return (
     <motion.section
@@ -22,9 +23,9 @@ const Banner = () => {
         <p className="text-lg mb-6 font-semibold">
           Explore fresh produce prices from local markets and make smarter decisions.
         </p>
-        <button className="px-6 py-3 bg-[#00B795] hover:bg-[#22A587] text-white text-lg font-semibold rounded-md transition">
+        <Link to='/AllProduct' ><button className="px-6 py-3 bg-[#00B795] hover:bg-[#22A587] text-white text-lg font-semibold rounded-md transition">
           Explore Now
-        </button>
+        </button></Link>
       </div>
     </motion.section>
   );

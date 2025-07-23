@@ -5,7 +5,7 @@ const Profile = () => {
   const { user } = useAuth();
 
   return (
-    <div className="max-w-md mt-40 mx-auto  p-6 bg-white rounded-2xl shadow-xl border border-gray-200">
+    <div className="max-w-md md:mt-40 mx-auto mt-23  p-6 bg-white rounded-2xl shadow-xl border border-gray-200">
       <div className="flex flex-col items-center text-center">
         <img
           className="w-24 h-24 rounded-full border-4 border-[#00B795] shadow-sm object-cover"

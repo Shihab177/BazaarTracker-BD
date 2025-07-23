@@ -76,13 +76,13 @@ const AllProducts = () => {
    
 
   return (
-    <div className="p-5 w-6xl mx-auto border border-gray-300 shadow-md rounded-xl my-10">
+    <div className="p-5 max-w-6xl mx-auto border border-gray-300 shadow-md rounded-xl my-10">
       <h1 className="text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
          All Products
       </h1>
 
-      <div className="overflow-x-auto rounded-md">
-        <table className="table table-zebra w-full text-md">
+      <div className="overflow-x-auto w-full rounded-md">
+        <table className="table min-w-[800px] table-zebra w-full text-md">
           <thead className="bg-[#00B795] text-white text-[18px]">
             <tr>
               <th>#</th>

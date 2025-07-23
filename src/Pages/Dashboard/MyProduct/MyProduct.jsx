@@ -56,14 +56,14 @@ const MyProducts = () => {
   }
 
   return (
-    <div className=" w-6xl px-4 pb-4 mx-auto border border-gray-300 shadow-md rounded-xl my-10">
-      <h2 className="text-3xl font-bold my-8 text-center ">
+    <div className=" max-w-6xl px-4 pb-4 mx-auto border border-gray-300 shadow-md rounded-xl my-10">
+      <h2 className="md:text-3xl text-2xl font-bold my-8 text-center ">
         {" "}
         My Submitted Products
       </h2>
 
-      <div className="overflow-x-auto  rounded-md  border border-gray-100">
-        <table className="min-w-full text-md text-left ">
+      <div className="overflow-x-auto w-full  rounded-md  border border-gray-100">
+        <table className="min-w-[800px] text-md mx-auto text-left ">
           <thead className="bg-[#00B795] text-[18px] text-white">
             <tr>
               <th className="px-4 py-3">Item Name</th>

@@ -16,16 +16,16 @@ const mostTracked = [
 
 const TrendingProducts = () => {
   return (
-    <section className=" pb-4 pt-8 md:px-12  bg-[#00B795] rounded-md">
+    <section className="pb-4 pt-8 md:px-12 bg-[#00B795] rounded-md overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-center mb-12"
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-center mb-12 px-2"
       >
-        <h2 className="text-4xl font-extrabold  flex items-center text-white justify-center gap-2">
-          <TrendingUp className=" w-8 h-8" />
+        <h2 className="md:text-4xl text-[24px] font-extrabold flex items-center text-white justify-center gap-2">
+          <TrendingUp className="md:w-8 md:h-8" />
           Trending Products
         </h2>
         <p className="text-white mt-3 max-w-xl mx-auto text-lg">
@@ -33,13 +33,13 @@ const TrendingProducts = () => {
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-10 mx-2">
         {/* Price Change Section */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-400"
         >
           <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -67,10 +67,10 @@ const TrendingProducts = () => {
 
         {/* Most Tracked Section */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="bg-white rounded-xl shadow-md p-6 border-l-4 border-yellow-400"
         >
           <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -83,7 +83,9 @@ const TrendingProducts = () => {
                 className="flex justify-between items-center bg-gray-50 hover:bg-yellow-50 p-3 rounded-md transition"
               >
                 <span className="font-medium text-gray-700">{item.name}</span>
-                <span className="text-sm text-gray-500 italic">{item.label}</span>
+                <span className="text-sm text-gray-500 italic">
+                  {item.label}
+                </span>
               </li>
             ))}
           </ul>

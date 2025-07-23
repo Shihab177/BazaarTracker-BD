@@ -19,15 +19,14 @@ import {
 } from "react-icons/fa";
 import useUserRole from "../hook/useUserRole";
 
-
 const DashboardLayout = () => {
- const {role,roleLoading}=useUserRole()
-  console.log(role)
+  const { role, roleLoading } = useUserRole();
+  console.log(role);
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col ">
-        <div className="navbar border-red-400 border bg-base-300 lg:hidden w-full">
+        <div className="navbar  bg-base-300 lg:hidden w-full">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-2"
@@ -51,8 +50,11 @@ const DashboardLayout = () => {
           </div>
           <div className="mx-2 flex-1 px-2 ">Dashboard</div>
         </div>
-        
-        <Outlet></Outlet>
+
+        <div>
+          {" "}
+          <Outlet></Outlet>
+        </div>
       </div>
       <div className="drawer-side">
         <label
@@ -60,30 +62,54 @@ const DashboardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu   bg-base-200  text-base-content text-[22px] min-h-full w-80 p-4 shadow-2xl">
+        <ul className="menu   bg-base-200  text-base-content md:text-[22px] text-[16px] min-h-full md:w-80 w-70 p-4 shadow-2xl">
           {/* Sidebar content here */}
-         
-          <Link className="flex gap-3 items-center" to='/'> <Logo></Logo> <span className="text-[24px] font-semibold">BazaarTracker <span className="text-[#00B795] ">BD</span> </span></Link>
-           {roleLoading && <p className="w-full text-center font-semibold">Loading.....</p>}
+
+          <Link className="flex gap-3 items-center" to="/">
+            {" "}
+            <Logo></Logo>{" "}
+            <span className="text-[24px] font-semibold">
+              BazaarTracker <span className="text-[#00B795] ">BD</span>{" "}
+            </span>
+          </Link>
+          <hr className="border mt-4 border-dashed" />
+          {roleLoading && (
+            <p className="w-full text-center font-semibold">Loading.....</p>
+          )}
+          <li className="w-full mt-5">
+            <NavLink
+              to="/dashboard"
+              end
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-[#00B795] px-3 py-1  rounded-md text-white"
+                  : undefined
+              }
+            >
+              Dashboard Home
+            </NavLink>
+          </li>
           {!roleLoading && role === "vendor" && (
             <>
-            
-              
-               <li className="mt-5">  <NavLink
+              <li className="">
+                {" "}
+                <NavLink
                   to="/dashboard/add-product"
-                  
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <MdAddShoppingCart className="" />
                   Add Product
                 </NavLink>
-               </li>
-            
+              </li>
 
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/my-products"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <MdViewList />
                   My Products
@@ -93,7 +119,9 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/add-ads"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <RiAdvertisementLine />
                   Add Advertisement
@@ -103,7 +131,9 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/my-ads"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <TbListDetails />
                   My Advertisements
@@ -113,10 +143,12 @@ const DashboardLayout = () => {
           )}
           {!roleLoading && role === "admin" && (
             <>
-              <li className=" mt-5 gap-2">
+              <li className="  gap-2">
                 <NavLink
                   to="/dashboard/all-users"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <FaUsers />
                   All Users
@@ -126,7 +158,9 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/all-products"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white" : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white" : undefined
+                  }
                 >
                   <MdShoppingBasket />
                   All Products
@@ -136,7 +170,9 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/all-ads"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <RiAdvertisementLine />
                   All Advertisements
@@ -146,7 +182,9 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/all-orders"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <FaShoppingCart />
                   All Orders
@@ -156,10 +194,12 @@ const DashboardLayout = () => {
           )}
           {!roleLoading && role === "user" && (
             <>
-              <li className=" mt-5 gap-2">
+              <li className="  gap-2">
                 <NavLink
                   to="/dashboard/price-trends"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <MdTimeline />
                   Price Trends
@@ -169,7 +209,9 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/watchlist"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <FaRegEye />
                   Manage Watchlist
@@ -179,7 +221,9 @@ const DashboardLayout = () => {
               <li className="  gap-2">
                 <NavLink
                   to="/dashboard/my-orders"
-                  className={({ isActive }) => isActive ? "bg-[#00B795] text-white " : undefined}
+                  className={({ isActive }) =>
+                    isActive ? "bg-[#00B795] text-white " : undefined
+                  }
                 >
                   <FaShoppingBag />
                   My Orders

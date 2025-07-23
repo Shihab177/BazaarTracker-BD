@@ -93,15 +93,15 @@ const  AdminUpdateProduct = () => {
   };
 
   return (
-    <div className="my-15 ">
-      <h2 className="text-3xl font-bold mb-8 text-center text-[#00B795]">
+    <div className="md:my-15 mt-8 ">
+      <h2 className="md:text-3xl text-2xl font-bold md:mb-8 mb-4 text-center ">
         Update Product
       </h2>
-      <div className="w-5xl mx-auto bg-gray-50 p-8 shadow-md rounded-xl">
+      <div className="xl:w-5xl mx-auto bg-gray-50 p-8 shadow-md rounded-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-          <div className="flex gap-4 w-full">
+          <div className="md:flex  gap-4 w-full">
           {/* Vendor Email */}
-          <div className="w-[50%]">
+          <div className="md:w-[50%]">
             <label className="block mb-1 font-medium" htmlFor="vendorEmail">
               Vendor Email
             </label>
@@ -115,7 +115,7 @@ const  AdminUpdateProduct = () => {
           </div>
 
           {/* Vendor Name */}
-          <div className="w-[50%]">
+          <div className="md:w-[50%]">
             <label className="block mb-1 font-medium" htmlFor="vendorName">
               Vendor Name
             </label>

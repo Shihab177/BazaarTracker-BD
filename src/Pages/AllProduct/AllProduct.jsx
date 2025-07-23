@@ -46,13 +46,13 @@ const AllProducts = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="mt-35 pb-20">
-      <h2 className="text-3xl font-bold mb-8 text-center">All Market Products</h2>
+    <div className="md:mt-35 md:pb-20 mt-23 pb-15">
+      <h2 className="md:text-3xl text-2xl font-bold mb-8 text-center">All Market Products</h2>
 
       {/* Filter & Sort */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
         {/* Sort */}
-        <div className="flex items-center gap-2">
+        <div className="flex md:ml-3 xl:ml-0 items-center gap-2">
           <span className="font-semibold">Sort by:</span>
           <select
             className="select focus:outline-none w-[280px] border-2 border-[#22A587]"
@@ -66,7 +66,7 @@ const AllProducts = () => {
         </div>
 
         {/* Date Range Filter */}
-        <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-3 flex-wrap ml-4 md:ml-0">
           <div className="flex items-center gap-2">
             <label className="font-semibold">From:</label>
             <DatePicker
@@ -100,7 +100,7 @@ const AllProducts = () => {
       </div>
 
       {/* Product Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-2 md:px-0">
         {products.map((product) => (
           <div
             key={product._id}

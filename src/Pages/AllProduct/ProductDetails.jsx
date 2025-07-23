@@ -148,7 +148,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto my-30 p-6 ">
+    <div className="max-w-5xl mx-auto md:my-30 p-6 mt-22 mb-10 md:mb-10">
       {/* Market & Product Info */}
       <div className="text-center mb-4">
         <p className="text-xl text-gray-500 font-semibold">

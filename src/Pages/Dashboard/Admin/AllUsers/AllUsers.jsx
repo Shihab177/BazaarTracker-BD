@@ -38,8 +38,8 @@ const AllUsers = () => {
   // }
 
   return (
-    <div className="p-5 w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
-      <h1 className="text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
+    <div className="p-5 max-w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
+      <h1 className="text-2xl md:text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
      
         All Users
       </h1>
@@ -60,8 +60,8 @@ const AllUsers = () => {
       ) : users.length === 0 ? (
         <p className="text-2xl text-center font-semibold">No users found.</p>
       ) : (
-        <div className="overflow-x-auto rounded-md">
-          <table className="table table-zebra text-md font-semibold w-full">
+        <div className="overflow-x-auto w-full rounded-md">
+          <table className="table min-w-[800px] table-zebra text-md font-semibold w-full">
             <thead className="bg-[#00B795] text-white text-[18px]">
               <tr>
                 <th>#</th>

@@ -26,11 +26,12 @@ const AdvertisementHighlights = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="my-10 pb-10 max-w-6xl mx-auto px-4"
+      className="md:my-10 mt-5 pb-10 max-w-6xl mx-auto px-4"
     >
-      <h2 className="text-4xl font-bold text-center mb-5">
+      <h2 className="md:text-4xl text-[25px] font-bold text-center mb-5">
         Featured Vendor Ads
       </h2>
+      <hr className="border border-dashed"/>
       {advertisements.length === 0 ? (
         <p className="text-center text-xl text-gray-900 my-10">
           No approved advertisements found.

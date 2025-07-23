@@ -60,10 +60,10 @@ const AllAdvertisements = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="mx-auto my-10 border border-gray-300  w-6xl px-4 pb-4 rounded-xl shadow-md">
-       <h1 className="text-3xl text-center  text-black font-semibold mb-6 flex items-center gap-3 mt-5 justify-center">All Advertisements</h1>
-      <div className="overflow-x-auto  rounded-md">
-        <table className="min-w-full text-left">
+    <div className="mx-auto my-10 border border-gray-300  max-w-6xl px-4 pb-4 rounded-xl shadow-md">
+       <h1 className="md:text-3xl text-2xl text-center  text-black font-semibold mb-6 flex items-center gap-3 mt-5 justify-center">All Advertisements</h1>
+      <div className="overflow-x-auto w-full  rounded-md">
+        <table className="min-w-[800px] text-left">
           <thead className="bg-[#00B795] text-white text-sm">
             <tr>
               <th className="py-3 px-4">Title</th>

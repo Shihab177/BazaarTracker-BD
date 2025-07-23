@@ -6,6 +6,7 @@ import { MdEmail, MdLock } from "react-icons/md";
 
 import useAuth from "../../../hook/useAuth";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const {
@@ -23,10 +24,13 @@ const Login = () => {
     .then(()=>{
       navigate(form)
     })
+    .catch(()=>{
+   toast.error("Login failed.tray again")
+    })
   };
 
   return (
-    <div className="flex flex-col justify-center my-50">
+    <div className="flex flex-col justify-center mt-24 mb-15 md:my-50">
       <div className="flex flex-col items-center">
         <Logo></Logo>
 
@@ -35,7 +39,7 @@ const Login = () => {
         </h1>
       </div>
       <form
-        className="w-[530px]   mx-auto"
+        className="md:w-[530px]   mx-auto"
         onSubmit={handleSubmit(onSubmit)}
         action=""
       >

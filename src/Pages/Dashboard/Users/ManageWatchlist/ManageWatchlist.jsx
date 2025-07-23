@@ -56,14 +56,14 @@ const ManageWatchlist = () => {
   }
 
   return (
-    <div className="p-5 w-6xl mx-auto my-10 border border-gray-300 shadow-md rounded-md bg-white">
-      <h2 className="text-3xl font-semibold mb-6 text-center text-black">
+    <div className="p-5 max-w-6xl mx-auto my-10 border border-gray-300 shadow-md rounded-md bg-white">
+      <h2 className="md:text-3xl text-2xl font-semibold mb-6 text-center text-black">
          Manage Watchlist
       </h2>
 
      
-        <div className="overflow-x-auto rounded-md">
-          <table className="table table-zebra w-full text-md font-semibold">
+        <div className="overflow-x-auto w-full rounded-md">
+          <table className="table min-w-[800px] table-zebra w-full text-md font-semibold">
             <thead className="bg-[#00B795] text-white text-[18px]">
               <tr>
                 <th>Product Name</th>

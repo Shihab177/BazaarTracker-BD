@@ -52,14 +52,14 @@ const AddAdvertisement = () => {
   };
 
   return (
-    <div className="w-5xl my-10 mx-auto p-8 bg-white border border-gray-300 rounded-lg shadow-xl">
+    <div className="xl:w-5xl my-10 mx-auto p-8 bg-white border border-gray-300 rounded-lg shadow-xl">
       <h2 className="text-3xl font-bold mb-6 text-center">
         Create Advertisement
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <div className="flex gap-4 w-full">
+        <div className="md:flex gap-4 w-full">
           {/* Vendor Email */}
-          <div className="w-[50%]">
+          <div className="md:w-[50%]">
             <label className="block mb-1 font-medium" htmlFor="vendorEmail">
               Vendor Email
             </label>
@@ -73,7 +73,7 @@ const AddAdvertisement = () => {
           </div>
 
           {/* Vendor Name */}
-          <div className="w-[50%]">
+          <div className="md:w-[50%]">
             <label className="block mb-1 font-medium" htmlFor="vendorName">
               Vendor Name
             </label>
