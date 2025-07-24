@@ -89,10 +89,10 @@ const Login = () => {
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2">
                 <input type="checkbox" id="agree" className="w-6 h-6" />
-                <label className="agree text-[19px]">Remember Me</label>
+                <label className="agree md:text-[19px] text-[15px]">Remember Me</label>
               </div>
             </div>
-            <a className="link link-hover text-[18px] text-gray-700 ">
+            <a className="link link-hover md:text-[18px] text-[15px] text-gray-700 ">
               Forgot password?
             </a>
           </div>
