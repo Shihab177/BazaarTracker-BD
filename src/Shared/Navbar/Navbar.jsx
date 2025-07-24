@@ -138,7 +138,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/login"
-                className="md:text-[18px] text-[13px]  font-medium md:font-semibold text-[#00B795]  hover:text-[#22A587] "
+                className="md:text-[18px] text-[14px]  font-medium md:font-semibold text-[#00B795]  hover:text-[#22A587] "
               >
                 Login
               </Link>
