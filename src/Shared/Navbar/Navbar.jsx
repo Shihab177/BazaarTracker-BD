@@ -1,9 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { MdDashboard } from "react-icons/md";
-import { Link, NavLink, useNavigate } from "react-router";
+import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import Logo from "../Logo/Logo";
 import useAuth from "../../hook/useAuth";
+import {
+  FaBoxOpen,
+  FaHome,
+  FaSignInAlt,
+  FaSignOutAlt,
+  FaTachometerAlt,
+  FaUserCircle,
+  FaUserPlus,
+} from "react-icons/fa";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -11,6 +20,9 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
+  const isDashboardRoute = location.pathname.startsWith("/dashboard");
+
   const handelLogout = () => {
     logout().then(() => {
       navigate("/");
@@ -48,7 +60,7 @@ const Navbar = () => {
             <Logo></Logo>
           </div>
           <button ref={buttonRef} className="md:hidden" onClick={handelMenu}>
-            <CiMenuFries size={27}/>
+            <CiMenuFries size={27} />
           </button>
 
           <h1 className="lg:text-2xl md:text-[20px] text-[16px] font-bold">
@@ -73,27 +85,33 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <NavLink
-                to="AllProduct"
-                className={({ isActive }) =>
-                  isActive
-                    ? "border-b-2 hover:text-[#22A587]"
-                    : "hover:text-[#22A587]"
-                }
-              >
-                All Products{" "}
-              </NavLink>
+              {!isDashboardRoute && (
+                <NavLink
+                  to="AllProduct"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "border-b-2 hover:text-[#22A587]"
+                      : "hover:text-[#22A587]"
+                  }
+                >
+                  All Products{" "}
+                </NavLink>
+              )}
             </ul>
           </div>
 
           {user && (
             <div className="md:flex hidden">
-              <Link
+              <NavLink
                 to="/dashboard"
-                className="lg:text-[18px] text-[16px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2"
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 lg:text-[18px] text-[16px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2"
+                    : "lg:text-[18px] text-[16px] font-semibold text-[#00B795] hover:text-[#22A587] flex items-center gap-2"
+                }
               >
                 <MdDashboard size={20} /> Dashboard
-              </Link>
+              </NavLink>
             </div>
           )}
           {user && (
@@ -143,23 +161,101 @@ const Navbar = () => {
           className="w-[60%] absolute top-[18] p-4 bg-white border border-gray-300 shadow-md z-50 h-screen rounded-sm"
         >
           <div className="text-[16px] font-semibold flex flex-col gap-2">
-            <NavLink to="profile">Profile</NavLink>
-            <NavLink to="/">Home</NavLink>
-     
-            <NavLink to="/AllProduct">All Products</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
+                  : "flex gap-2 items-center"
+              }
+              to="profile"
+            >
+              <span>
+                <FaUserCircle />
+              </span>
+              Profile
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
+                  : "flex gap-2 items-center"
+              }
+              to="/"
+            >
+              <span>
+                <FaHome />
+              </span>
+              Home
+            </NavLink>
+
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
+                  : "flex gap-2 items-center"
+              }
+              to="/AllProduct"
+            >
+              <span>
+                {" "}
+                <FaBoxOpen />
+              </span>
+              All Products
+            </NavLink>
 
             {user && (
               <>
-                <NavLink to="/dashboard">Dashboard</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
+                      : "flex gap-2 items-center"
+                  }
+                  to="/dashboard"
+                >
+                  <span>
+                    <MdDashboard />
+                  </span>
+                  Dashboard
+                </NavLink>
 
-                <button onClick={logout}>Logout</button>
+                <button className="flex gap-2 items-center" onClick={logout}>
+                  <span>
+                    <FaSignOutAlt />
+                  </span>
+                  Logout
+                </button>
               </>
             )}
             {!user && (
               <>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
+                      : "flex gap-2 items-center"
+                  }
+                  to="/login"
+                >
+                  <span>
+                    <FaSignInAlt />
+                  </span>
+                  Login
+                </NavLink>
 
-                <NavLink to="/register">Sign Up</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
+                      : "flex gap-2 items-center"
+                  }
+                  to="/register"
+                >
+                  <span>
+                    <FaUserPlus />
+                  </span>
+                  Sign Up
+                </NavLink>
               </>
             )}
           </div>
