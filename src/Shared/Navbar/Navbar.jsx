@@ -140,7 +140,7 @@ const Navbar = () => {
       {menu && (
         <div
           ref={menuRef}
-          className="w-[60%] absolute top-[18] p-4 bg-yellow-100 z-50 h-screen rounded-sm"
+          className="w-[60%] absolute top-[18] p-4 bg-white border border-gray-300 shadow-md z-50 h-screen rounded-sm"
         >
           <div className="text-[16px] font-semibold flex flex-col gap-2">
             <NavLink to="profile">Profile</NavLink>

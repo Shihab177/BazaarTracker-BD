@@ -38,9 +38,14 @@ const Register = () => {
        
         
         //update profile in firebase
+        const profileImage =
+  profilePic && profilePic.trim() !== ""
+    ? profilePic
+    : "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg";
+
         const userProfile = {
           displayName:data.name,
-          photoURL: profilePic || "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg"
+          photoURL: profileImage
         }
         updateUserProfile(userProfile)
         .then(()=>{

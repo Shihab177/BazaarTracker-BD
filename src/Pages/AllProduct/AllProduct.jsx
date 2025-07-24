@@ -46,7 +46,7 @@ const AllProducts = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="md:mt-35 md:pb-20 mt-23 pb-15">
+    <div className="md:mt-35 md:pb-20 mt-23 pb-15 mx-2 md:mx-0">
       <h2 className="md:text-3xl text-2xl font-bold mb-8 text-center">All Market Products</h2>
 
       {/* Filter & Sort */}
