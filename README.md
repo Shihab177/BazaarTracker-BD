@@ -83,5 +83,14 @@
 
 ---
 
-## 📁 Folder Structure (Client)
+ # 🚀 How to Run Locally
+
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/Shihab177/BazaarTracker-BD.git
+   cd bazaar-tracker-bd-cliant
+   npm install
+   npm run dev
+
+   
 
