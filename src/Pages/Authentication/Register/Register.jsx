@@ -57,7 +57,7 @@ const Register = () => {
         console.log(error)
     })
   };
-  ///
+  //
   const handelImageUpload = async (e) => {
      const image = e.target.files[0]
    
