@@ -16,7 +16,7 @@
 
 ## 🌐 Live Links
 
--** [https://bazaartrackerbd-client.vercel.app]
+-** [https://bazaar-tracker--bd.web.app/]
 
 
 ---
