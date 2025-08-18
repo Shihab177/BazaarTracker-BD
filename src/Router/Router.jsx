@@ -29,7 +29,8 @@ import VendorRoute from "../Routes/VendorRoute";
 import Profile from "../Pages/Profilr/Profile";
 import AdminUpdateProduct from "../Pages/Dashboard/Admin/AllProducts/AdminUpdateProduct";
 import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
-
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import UProfile from "../Pages/UProfile/UProfile";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +48,14 @@ export const router = createBrowserRouter([
       {
         path: "AllProduct",
         Component: AllProduct,
+      },
+      {
+        path:'about',
+        Component:AboutUs
+      },
+      {
+        path:'uProfile',
+        Component:UProfile
       },
       {
         path: "product-details/:id",

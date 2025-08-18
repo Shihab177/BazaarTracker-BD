@@ -52,8 +52,8 @@ const Navbar = () => {
     };
   }, [menu]);
   return (
-    <nav className="fixed bg-[#FFFFFF] top-0 left-0 w-full lg:h-[96px] z-40 shadow-md">
-      <div className="flex items-center lg:py-4 md:py-3  py-4 px-2 xl:px-0  md:container mx-auto">
+    <nav className="fixed bg-gray-50 top-0 left-0 w-full md:h-[80px] h-[56px] z-40 shadow-md">
+      <div className="h-full flex items-center lg:py-4 px-2 xl:px-0  md:container mx-auto">
         <div className="flex gap-4 items-center w-[60%] md:w-3/12">
           <div className="lg:flex hidden">
             {" "}
@@ -97,6 +97,15 @@ const Navbar = () => {
                   All Products{" "}
                 </NavLink>
               )}
+              <NavLink
+              to="about"
+              className={({ isActive }) =>
+                    isActive
+                      ? "border-b-2 hover:text-[#22A587]"
+                      : "hover:text-[#22A587]"
+                  }>
+                About
+              </NavLink>
             </ul>
           </div>
 
@@ -114,11 +123,11 @@ const Navbar = () => {
               </NavLink>
             </div>
           )}
-          {user && (
+          {user && !isDashboardRoute  && (
             <div className="md:flex hidden">
               <img
-                onClick={() => navigate("profile")}
-                className="w-16 h-16 rounded-full"
+                onClick={() => navigate("uProfile")}
+                className="w-16 h-16 rounded-full cursor-pointer"
                 src={user?.photoURL}
                 alt="profile"
                 referrerPolicy="no-referrer"
@@ -131,7 +140,7 @@ const Navbar = () => {
             {user ? (
               <button
                 onClick={handelLogout}
-                className="md:px-4 md:py-2 px-3 py-1 md:text-[18px] text-[13px] font-medium md:font-semibold bg-[#00B795] hover:bg-[#22A587] text-white rounded-sm flex items-center"
+                className="md:px-4 cursor-pointer md:py-2 px-3 py-1 md:text-[18px] text-[13px] font-medium md:font-semibold bg-[#00B795] hover:bg-[#22A587] text-white rounded-sm flex items-center"
               >
                 Logout
               </button>
