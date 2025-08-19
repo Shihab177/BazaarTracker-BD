@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 const Logo = () => {
     return (
         <div>
-            <img className='w-13 h-13' src={logo} alt="" />
+            <img className=' h-8 md:h-10 xl:h-12 w-8 md:w-10 xl:w-12' src={logo} alt="" />
         </div>
     );
 };

@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Banner = () => {
   return (
     <motion.section
-      className="relative h-[540px] bg-cover bg-center flex items-center justify-center text-white rounded-b-sm"
+      className="relative h-[540px] bg-cover bg-center flex items-center justify-center text-white rounded-b-sm max-w-7xl mx-auto"
       style={{
     backgroundImage: `url(${img})`,
   }}
@@ -14,7 +14,8 @@ const Banner = () => {
       transition={{ duration: 0.4 }}
     >
        {/* Overlay Layer */}
-  
+         {/* Overlay Layer */}
+      <div className="absolute inset-0 bg-black/40 rounded-b-sm"></div>
 
       <div className="elative z-10 bg-opacity-20 p-8 rounded-lg text-center max-w-2xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">

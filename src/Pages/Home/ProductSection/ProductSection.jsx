@@ -26,7 +26,7 @@ const ProductSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="lg:mt-25 mt-12 pb-10"
+      className="mt-12 md:mt-16 lg:mt-20"
     >
       <div className=" px-4">
         <h2 className="md:text-4xl text-[24px] font-bold text-center mb-5 md:mb-10">
@@ -40,12 +40,12 @@ const ProductSection = () => {
             No products available at the moment.
           </p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {products?.map((product) => (
               <motion.div
                 key={product._id}
                 whileHover={{ scale: 1.03 }}
-                className="bg-white shadow-md rounded-xl p-5 border border-gray-200 transition"
+                className="bg-white shadow-md rounded-md p-5 border border-gray-200 transition"
               >
                 <img
                   src={product.image}
