@@ -22,6 +22,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
   const isDashboardRoute = location.pathname.startsWith("/dashboard");
+  
 
   const handelLogout = () => {
     logout().then(() => {
@@ -54,16 +55,16 @@ const Navbar = () => {
   return (
     <nav className="fixed bg-gray-50 top-0 left-0 w-full md:h-[80px] h-[56px] z-40 shadow-md">
       <div className="h-full flex items-center lg:py-4 px-2 xl:px-0  md:container mx-auto">
-        <div className="flex gap-4 items-center w-[60%] md:w-3/12">
+        <div className="flex gap-4 items-center w-[60%] lg:w-3/12">
           <div className="lg:flex hidden">
             {" "}
             <Logo></Logo>
           </div>
-          <button ref={buttonRef} className="md:hidden" onClick={handelMenu}>
-            <CiMenuFries size={27} />
+          <button ref={buttonRef} className="lg:hidden cursor-pointer" onClick={handelMenu}>
+            <CiMenuFries className="md:w-10 md:h-10 w-8 h-8"/>
           </button>
 
-          <h1 className="lg:text-2xl md:text-[20px] text-[16px] font-bold">
+          <h1 className="xl:text-2xl lg:text-[20px] md:text-[24px] text-[16px] font-bold">
             BazaarTracker <span className="text-[#00B795]">BD</span>
           </h1>
         </div>
@@ -71,7 +72,7 @@ const Navbar = () => {
         {/*NavLink profile and btn */}
         <div className=" md:w-9/12 flex  w-[40%] items-center md:gap-6 gap-2 justify-end">
           {/* Menu Links */}
-          <div className="mx-4 hidden md:flex">
+          <div className="mx-4 hidden lg:flex">
             <ul className="lg:text-[18px] text-[16px] flex gap-6 justify-between font-semibold">
               <li>
                 <NavLink
@@ -110,7 +111,7 @@ const Navbar = () => {
           </div>
 
           {user && (
-            <div className="md:flex hidden">
+            <div className="lg:flex hidden">
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
@@ -124,7 +125,7 @@ const Navbar = () => {
             </div>
           )}
           {user && !isDashboardRoute  && (
-            <div className="md:flex hidden">
+            <div className="lg:flex hidden">
               <img
                 onClick={() => navigate("uProfile")}
                 className="w-16 h-16 rounded-full cursor-pointer"

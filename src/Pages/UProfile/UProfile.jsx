@@ -26,7 +26,7 @@ const UProfile = () => {
     try {
       await updateUserProfile({
         displayName: name,
-        photoURL: profilePic,
+        photoURL:  profilePic ? profilePic : user?.photoURL,
       });
       setMessage("Profile updated successfully!");
       setModalOpen(false); 
@@ -47,7 +47,7 @@ const UProfile = () => {
         <h2 className="text-2xl font-semibold mt-4">{user?.displayName || "User"}</h2>
         <p className="text-gray-600">{user?.email}</p>
         <button
-          className="mt-6 px-6 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition"
+          className="mt-6 bg-[#00B795] hover:bg-[#22A587] text-white rounded-md px-4 py-2 transition"
           onClick={() => setModalOpen(true)}
         >
           Update Profile
@@ -66,11 +66,12 @@ const UProfile = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="input input-bordered w-full"
-                  placeholder="Enter your name"
-                  required
+                
+                  
                 />
               </div>
 
@@ -96,12 +97,12 @@ const UProfile = () => {
               <div className="modal-action">
                 <button
                   type="button"
-                  className="btn btn-outline"
+                  className="px-4 py-2 bg-red-500 text-white rounded-md"
                   onClick={() => setModalOpen(false)}
                 >
                   Cancel
                 </button>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="bg-[#00B795] hover:bg-[#22A587] text-white rounded-md px-4 py-2">
                   Save Changes
                 </button>
               </div>
