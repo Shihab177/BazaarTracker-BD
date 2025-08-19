@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Banner = () => {
   return (
     <motion.section
-      className="relative h-[540px] bg-cover bg-center flex items-center justify-center text-white rounded-b-sm max-w-7xl mx-auto"
+      className="px-2 relative h-[540px] bg-cover bg-center flex items-center justify-center text-white rounded-b-sm max-w-7xl mx-auto"
       style={{
     backgroundImage: `url(${img})`,
   }}

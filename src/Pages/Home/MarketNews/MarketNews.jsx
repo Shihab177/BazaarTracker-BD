@@ -35,19 +35,19 @@ const newsData = [
 
 const MarketNews = () => {
   return (
-    <section className="md:pt-16  pt-12 px-4 md:px-12 bg-gradient-to-b ">
+    <section className="md:mt-16  mt-12 lg:mt-20  bg-gradient-to-b ">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="text-center"
       >
-        <h2 className="md:text-4xl text-[24px] font-extrabold text-gray-900 flex justify-center items-center gap-2 md:gap-3">
+        <h2 className="md:[30px] text-[24px] lg:text-[36px] font-semibold text-gray-800 flex justify-center items-center gap-2 md:gap-3 mb-4 md:mb-6 lg:mb-8">
           <FaRegNewspaper className="text-[#00B795] md:text-4xl" />
           Market News & Updates
         </h2>
-        <p className="text-gray-600 mt-3 text-lg max-w-xl mx-auto">
+        <p className="text-gray-700 mt-3 text-lg max-w-xl mx-auto mb-4 md:mb-6 lg:mb-8">
           Stay updated with the latest happenings and price changes from your local markets.
         </p>
       </motion.div>
@@ -74,7 +74,7 @@ const MarketNews = () => {
               <span className="text-sm font-semibold text-[#00B795] mb-2">
                 {news.category}
               </span>
-              <h3 className="text-lg font-bold text-gray-900 mb-2 flex-grow">
+              <h3 className="text-lg font-bold text-gray-800 mb-2 flex-grow">
                 {news.title}
               </h3>
               <p className="text-gray-500 text-sm mt-auto">{news.date}</p>

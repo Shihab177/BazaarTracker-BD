@@ -104,7 +104,7 @@ const AllProducts = () => {
         {products.map((product) => (
           <div
             key={product._id}
-            className="rounded-xl border border-gray-300 shadow-sm p-4 hover:shadow-lg transition"
+            className="rounded-md border border-gray-200 shadow-sm p-4 hover:shadow-lg transition"
           >
             <img
               src={product.image}

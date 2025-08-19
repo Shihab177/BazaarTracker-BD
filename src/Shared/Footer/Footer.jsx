@@ -6,7 +6,7 @@ import Logo from "../Logo/Logo";
 const Footer = () => {
   return (
     <footer className=" px-6 border-t border-gray-300  py-10">
-      <div className="md:container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left justify-between text-[16px] font-medium ">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left justify-between text-[16px] font-medium ">
         {/* Logo and Website Name */}
         <div>
           <div className="flex items-center gap-3">

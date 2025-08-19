@@ -28,8 +28,8 @@ const ProductSection = () => {
       viewport={{ once: true }}
       className="mt-12 md:mt-16 lg:mt-20"
     >
-      <div className=" px-4">
-        <h2 className="md:text-4xl text-[24px] font-bold text-center mb-5 md:mb-10">
+      <div className="">
+        <h2 className="md:[30px] text-[24px] lg:text-[36px] font-semibold text-gray-800 text-center mb-4 md:mb-6 lg:mb-8">
           Latest Market Prices
         </h2>
         {isLoading && (

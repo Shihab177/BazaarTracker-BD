@@ -54,8 +54,8 @@ const Navbar = () => {
   }, [menu]);
   return (
     <nav className="fixed bg-gray-50 top-0 left-0 w-full md:h-[80px] h-[56px] z-40 shadow-md">
-      <div className="h-full flex items-center  px-4 md:px-6 lg:px-8  max-w-7xl mx-auto">
-        <div className="flex gap-4 items-center w-[60%] lg:w-3/12">
+      <div className="h-full flex items-center justify-between  px-4 md:px-6 lg:px-8  max-w-7xl mx-auto">
+        <div className="flex gap-4 items-center ">
           <div className="lg:flex hidden">
             {" "}
             <Logo></Logo>
@@ -64,13 +64,13 @@ const Navbar = () => {
             <CiMenuFries className="md:w-10 md:h-10 w-8 h-8"/>
           </button>
 
-          <h1 className="xl:text-[30px] lg:text-[20px] md:text-[24px] text-[20px] font-bold">
+          <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[20px] font-bold">
             BazaarTracker <span className="text-[#00B795]">BD</span>
           </h1>
         </div>
 
         {/*NavLink profile and btn */}
-        <div className=" md:w-9/12 flex  w-[40%] items-center md:gap-6 gap-2 justify-end">
+        <div className="flex  w items-center md:gap-6 gap-2 justify-end">
           {/* Menu Links */}
           <div className="mx-4 hidden lg:flex">
             <ul className="lg:text-[17px] text-[16px] flex gap-6 justify-between font-semibold">

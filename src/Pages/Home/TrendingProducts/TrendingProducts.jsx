@@ -16,7 +16,7 @@ const mostTracked = [
 
 const TrendingProducts = () => {
   return (
-    <section className="pb-4 pt-8 md:px-12 bg-[#00B795] rounded-md overflow-x-hidden">
+    <section className="pb-4 pt-8 md:px-12 mt-12 md:mt-16 lg:mt-20 bg-[#00B795] rounded-md overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const TrendingProducts = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="text-center mb-12 px-2"
       >
-        <h2 className="md:text-4xl text-[24px] font-extrabold flex items-center text-white justify-center gap-2">
+        <h2 className="md:text-4xl text-[24px] font-semibold flex items-center text-white justify-center gap-2">
           <TrendingUp className="md:w-8 md:h-8" />
           Trending Products
         </h2>
@@ -42,7 +42,7 @@ const TrendingProducts = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-400"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
             <Flame className="text-red-500" /> Biggest Price Changes
           </h3>
           <ul className="space-y-3">
@@ -73,7 +73,7 @@ const TrendingProducts = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="bg-white rounded-xl shadow-md p-6 border-l-4 border-yellow-400"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
             <TrendingUp className="text-yellow-500" /> Most Tracked Products
           </h3>
           <ul className="space-y-3">

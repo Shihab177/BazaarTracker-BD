@@ -26,9 +26,9 @@ const AdvertisementHighlights = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="md:my-10 mt-5 pb-10 max-w-6xl mx-auto px-4"
+      className="mt-12 md:mt-16 lg:mt-20"
     >
-      <h2 className="md:text-4xl text-[25px] font-bold text-center mb-5">
+      <h2 className="md:[30px] text-[24px] lg:text-[36px] text-gray-800 font-semibold text-center mb-4 md:mb-6 lg:mb-8">
         Featured Vendor Ads
       </h2>
       <hr className="border border-dashed"/>
