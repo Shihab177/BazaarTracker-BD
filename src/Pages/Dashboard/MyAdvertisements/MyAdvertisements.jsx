@@ -106,11 +106,11 @@ const MyAdvertisements = () => {
   }
 
   return (
-    <div className="pb-4 px-4 max-w-6xl mx-auto border rounded-xl shadow-md border-gray-300 my-10 ">
-      <h2 className="md:text-3xl text-2xl font-bold text-center my-8">My Advertisements</h2>
+    <div className="p-6">
+      <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">My Advertisements</h2>
 
       <div className="overflow-x-auto w-full rounded-md ">
-        <table className="table  min-w-[800px] text-md font-semibold">
+        <table className="table  min-w-[800px] text-md font-semibold border border-gray-200">
           <thead className="bg-[#00B795] text-white text-[18px]">
             <tr>
               <th>Title</th>

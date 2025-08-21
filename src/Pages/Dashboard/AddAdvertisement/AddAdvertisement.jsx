@@ -52,8 +52,8 @@ const AddAdvertisement = () => {
   };
 
   return (
-    <div className="xl:w-5xl my-10 mx-auto p-4 md:p-8 bg-white border border-gray-300 rounded-lg shadow-xl">
-      <h2 className="text-3xl font-bold mb-6 text-center">
+    <div className="p-6 max-w-7xl mx-auto">
+      <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
         Create Advertisement
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
