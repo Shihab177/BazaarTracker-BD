@@ -17,6 +17,7 @@ import {
   FaShoppingCart,
   FaUsers,
 } from "react-icons/fa";
+import { FiHome, FiUser } from "react-icons/fi"; 
 import useUserRole from "../hook/useUserRole";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
@@ -26,8 +27,8 @@ const DashboardLayout = () => {
   console.log(role);
   return (
     <div>
-      <div className="lg:flex hidden"><Navbar></Navbar></div>
-      <div className="drawer lg:drawer-open lg:mt-25">
+      {/* <div className="lg:flex hidden"><Navbar></Navbar></div> */}
+      <div className="drawer lg:drawer-open ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
           <div className="navbar  bg-base-300 lg:hidden w-full">
@@ -67,7 +68,7 @@ const DashboardLayout = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu   bg-base-200  text-base-content md:text-[22px] text-[16px] min-h-full md:w-80 w-70 p-4 shadow-2xl">
+          <ul className="menu   bg-base-200  text-base-content md:text-[22px] text-[16px] min-h-full md:w-80 w-70  shadow-2xl">
             {/* Sidebar content here */}
 
             <Link className="flex gap-3 items-center" to="/">
@@ -91,7 +92,20 @@ const DashboardLayout = () => {
                     : undefined
                 }
               >
-                Dashboard Home
+                <FiHome className="text-lg" />
+                Overview
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+              to='/dashboard/profile'
+               className={({ isActive }) =>
+                  isActive
+                    ? "bg-[#00B795] px-3 py-1  rounded-md text-white"
+                    : undefined
+                }>
+                   <FiUser className="text-lg" />
+                Profile
               </NavLink>
             </li>
             {!roleLoading && role === "vendor" && (
@@ -239,7 +253,7 @@ const DashboardLayout = () => {
           </ul>
         </div>
       </div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

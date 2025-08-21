@@ -77,8 +77,8 @@ const AddProduct = () => {
 
   return (
     <div className="">
-      <div className="xl:w-5xl mx-auto bg-white md:p-8 p-4 shadow-xl rounded-xl my-10 border border-gray-300">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+      <div className="p-6 max-w-7xl mx-auto">
+        <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
           {" "}
           Add New Product
         </h2>

@@ -26,11 +26,11 @@ import MyOrderList from "../Pages/Dashboard/Users/MyOrderList/MyOrderList";
 import Forbidden from "../Pages/Forbidden/Forbidden";
 import AdminRoute from "../Routes/AdminRoute";
 import VendorRoute from "../Routes/VendorRoute";
-import Profile from "../Pages/Profilr/Profile";
 import AdminUpdateProduct from "../Pages/Dashboard/Admin/AllProducts/AdminUpdateProduct";
-import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import UProfile from "../Pages/UProfile/UProfile";
+import Profile from "../Pages/Dashboard/Profile/Profile";
+import Overview from "../Pages/Dashboard/Overview/Overview";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -73,10 +73,7 @@ export const router = createBrowserRouter([
         path: "Forbidden",
         Component: Forbidden,
       },
-      {
-        path: "profile",
-        Component: Profile,
-      },
+     
     ],
   },
   {
@@ -104,7 +101,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <DashboardHome />,
+        element: <Overview></Overview>,
+      },
+      {
+        path:"profile",
+        Component:Profile
       },
       //vendor
       {

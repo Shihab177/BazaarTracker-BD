@@ -56,8 +56,8 @@ const ManageWatchlist = () => {
   }
 
   return (
-    <div className="p-5 max-w-6xl mx-auto my-10 border border-gray-300 shadow-md rounded-md bg-white">
-      <h2 className="md:text-3xl text-2xl font-semibold mb-6 text-center text-black">
+    <div className="m-6  rounded-md ">
+      <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
          Manage Watchlist
       </h2>
 

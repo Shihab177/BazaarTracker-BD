@@ -65,7 +65,12 @@ const ViewPriceTrends = () => {
       : 0;
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 mt-8 p-4">
+   <div className=" p-6">
+     <h1 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
+        Price Trend
+      </h1>
+     <div className="flex flex-col md:flex-row gap-6">
+     
       {/* Sidebar */}
       <div className="md:w-1/4 bg-white rounded-xl border border-gray-300 shadow p-4">
         <h2 className="text-xl font-semibold mb-4">Tracked Items</h2>
@@ -134,6 +139,7 @@ const ViewPriceTrends = () => {
         )}
       </motion.div>
     </div>
+   </div>
   );
 };
 

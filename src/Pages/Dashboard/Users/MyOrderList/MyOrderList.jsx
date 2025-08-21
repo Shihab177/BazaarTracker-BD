@@ -34,8 +34,8 @@ const MyOrderList = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-5 my-10 bg-white border-t border-gray-300 rounded-md shadow-md">
-      <h2 className="md:text-3xl text-2xl font-semibold mb-6 text-center text-black">
+    <div className="p-6 border-gray-200 ">
+      <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
         My Order List
       </h2>
 

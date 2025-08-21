@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-800">
+    <div className="min-h-screen  text-gray-800">
       {/* Hero Section */}
-      <section className="text-center py-30 px-6">
+      <section className="text-center py-30 ">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,10 +20,10 @@ const AboutUs = () => {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-6 py-12">
+      <section className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto  py-12">
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="bg-white p-8 rounded-2xl shadow-lg border"
+          className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
         >
           <h2 className="text-2xl font-semibold text-green-700 mb-4">🎯 Our Mission</h2>
           <p className="text-gray-600 leading-relaxed">
@@ -33,7 +33,7 @@ const AboutUs = () => {
 
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="bg-white p-8 rounded-2xl shadow-lg border"
+          className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
         >
           <h2 className="text-2xl font-semibold text-green-700 mb-4">🌍 Our Vision</h2>
           <p className="text-gray-600 leading-relaxed">
@@ -43,16 +43,16 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-16">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">
           Meet Our Team
         </h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto ">
           {["Shihab", "Ayesha", "Rahim"].map((name, index) => (
             <motion.div
               key={index}
               whileHover={{ y: -10 }}
-              className="bg-white shadow-lg rounded-2xl overflow-hidden border"
+              className="bg-white shadow-lg rounded-2xl overflow-hidden border border-gray-200"
             >
               <img
                 src={`https://i.pravatar.cc/300?img=${index + 12}`}

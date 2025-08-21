@@ -38,8 +38,8 @@ const AllUsers = () => {
   // }
 
   return (
-    <div className="p-5 max-w-6xl my-10 mx-auto border border-gray-300 shadow-md rounded-md">
-      <h1 className="text-2xl md:text-3xl text-center text-black font-semibold mb-6 flex items-center gap-3 justify-center">
+    <div className="p-6 ">
+      <h1 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
      
         All Users
       </h1>
