@@ -36,7 +36,7 @@ const UProfile = () => {
   };
 
   return (
-    <div className=" flex flex-col items-center justify-start py-28 px-4">
+    <div className=" flex flex-col items-center justify-start py-28 px-4 text-gray-800">
       {/* Profile Card */}
       <div className=" rounded-2xl  p-8 w-full max-w-md text-center">
         <img

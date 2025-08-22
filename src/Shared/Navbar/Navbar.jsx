@@ -22,7 +22,6 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
   const isDashboardRoute = location.pathname.startsWith("/dashboard");
-  
 
   const handelLogout = () => {
     logout().then(() => {
@@ -60,14 +59,19 @@ const Navbar = () => {
             {" "}
             <Logo></Logo>
           </div>
-          <button ref={buttonRef} className="lg:hidden cursor-pointer text-[#00B795] text:bg-[#22A587]" onClick={handelMenu}>
-            <CiMenuFries className="md:w-10 md:h-10 w-8 h-8"/>
+          <button
+            ref={buttonRef}
+            className="lg:hidden cursor-pointer text-[#00B795] text:bg-[#22A587]"
+            onClick={handelMenu}
+          >
+            <CiMenuFries className="md:w-10 md:h-10 w-8 h-8" />
           </button>
 
           <Link to="/">
-          <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[20px] font-bold text-gray-800">
-            BazaarTracker <span className="text-[#00B795]">BD</span>
-          </h1></Link>
+            <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[20px] font-bold text-gray-800">
+              BazaarTracker <span className="text-[#00B795]">BD</span>
+            </h1>
+          </Link>
         </div>
 
         {/*NavLink profile and btn */}
@@ -100,12 +104,13 @@ const Navbar = () => {
                 </NavLink>
               )}
               <NavLink
-              to="about"
-              className={({ isActive }) =>
-                    isActive
-                      ? "border-b-2 hover:text-[#22A587]"
-                      : "hover:text-[#22A587]"
-                  }>
+                to="about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 hover:text-[#22A587]"
+                    : "hover:text-[#22A587]"
+                }
+              >
                 About
               </NavLink>
             </ul>
@@ -125,7 +130,7 @@ const Navbar = () => {
               </NavLink>
             </div>
           )}
-          {user && !isDashboardRoute  && (
+          {user && !isDashboardRoute && (
             <div className="lg:flex hidden">
               <img
                 onClick={() => navigate("uProfile")}
@@ -172,19 +177,21 @@ const Navbar = () => {
           className="w-[60%] absolute top-[18] p-4 bg-white border border-gray-300 shadow-md z-50 h-screen rounded-sm text-gray-800"
         >
           <div className="text-[16px] font-semibold flex flex-col gap-2">
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
-                  : "flex gap-2 items-center"
-              }
-              to="uProfile"
-            >
-              <span>
-                <FaUserCircle />
-              </span>
-              Profile
-            </NavLink>
+            {user && (
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
+                    : "flex gap-2 items-center"
+                }
+                to="uProfile"
+              >
+                <span>
+                  <FaUserCircle />
+                </span>
+                Profile
+              </NavLink>
+            )}
             <NavLink
               className={({ isActive }) =>
                 isActive
