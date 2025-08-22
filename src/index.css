@@ -19,3 +19,8 @@
 .custom-zebra tbody tr:nth-child(even) {
   @apply bg-gray-100;
 }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #f3f4f6 inset !important; 
+  -webkit-text-fill-color: #1f2937 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}

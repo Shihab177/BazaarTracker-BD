@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <nav className="fixed bg-gray-50 top-0 left-0 w-full md:h-[80px] h-[56px] z-40 shadow-md">
       <div className="h-full flex items-center justify-between  px-4 md:px-6 lg:px-8  max-w-7xl mx-auto">
-        <div className="flex gap-4 items-center ">
+        <div className="flex md:gap-4 gap-2 items-center ">
           <div className="lg:flex hidden">
             {" "}
             <Logo></Logo>
@@ -68,7 +68,7 @@ const Navbar = () => {
           </button>
 
           <Link to="/">
-            <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[20px] font-bold text-gray-800">
+            <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[16px] md:font-bold font-semibold text-gray-800">
               BazaarTracker <span className="text-[#00B795]">BD</span>
             </h1>
           </Link>
