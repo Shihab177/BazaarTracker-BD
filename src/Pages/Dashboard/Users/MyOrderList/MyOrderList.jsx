@@ -34,7 +34,7 @@ const MyOrderList = () => {
   }
 
   return (
-    <div className="p-6 border-gray-200 ">
+    <div className="p-6 border-gray-200 text-gray-800 min-h-screen">
       <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
         My Order List
       </h2>
@@ -45,7 +45,7 @@ const MyOrderList = () => {
         </p>
       ) : (
         <div className="overflow-x-auto w-full rounded-md">
-          <table className="table  table-zebra min-w-[800px] text-md font-semibold border border-gray-300">
+          <table className="table  custom-zebra min-w-[800px] text-md font-semibold border border-gray-300">
             <thead className="bg-[#00B795] text-white text-lg">
               <tr>
                 <th className="px-6 py-3">Product Name</th>
@@ -69,7 +69,7 @@ const MyOrderList = () => {
                       onClick={() =>
                         navigate(`/product-details/${order.productId}`)
                       }
-                      className="btn btn-sm bg-[#00B795] text-white hover:bg-[#01886a] transition"
+                      className="btn btn-sm bg-[#00B795] text-white hover:bg-[#01886a] border-none transition"
                     >
                       View Details
                     </button>

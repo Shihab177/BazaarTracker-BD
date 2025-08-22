@@ -64,9 +64,10 @@ const Navbar = () => {
             <CiMenuFries className="md:w-10 md:h-10 w-8 h-8"/>
           </button>
 
+          <Link to="/">
           <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[20px] font-bold text-gray-800">
             BazaarTracker <span className="text-[#00B795]">BD</span>
-          </h1>
+          </h1></Link>
         </div>
 
         {/*NavLink profile and btn */}

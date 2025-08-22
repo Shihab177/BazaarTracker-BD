@@ -33,10 +33,10 @@ const ProductSection = () => {
           Latest Market Prices
         </h2>
         {isLoading && (
-          <p className="text-center py-20 text-lg">Loading products...</p>
+          <p className="text-center py-20 text-lg text-gray-800">Loading products...</p>
         )}
         {products.length === 0 ? (
-          <p className="text-lg text-center font-medium">
+          <p className="text-lg text-center font-medium text-gray-800">
             No products available at the moment.
           </p>
         ) : (
