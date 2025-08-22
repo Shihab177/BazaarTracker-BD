@@ -76,7 +76,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="">
+    <div className="text-gray-800">
       <div className="p-6 max-w-7xl mx-auto">
         <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
           {" "}
@@ -122,7 +122,7 @@ const AddProduct = () => {
             <label className="font-medium">Market Description</label>
             <textarea
               {...register("marketDescription", { required: true })}
-              className="textarea textarea-bordered w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
+              className="textarea textarea-bordered w-full px-4 py-2 border border-gray-300 bg-gray-50 rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
               placeholder="Market Description"
             />
             {errors.marketDescription && (
@@ -164,7 +164,7 @@ const AddProduct = () => {
             <label className="font-medium">Item Description (optional)</label>
             <textarea
               {...register("itemDescription")}
-              className="textarea textarea-bordered w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
+              className="textarea textarea-bordered w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
               placeholder="Item Description"
             />
           </div>

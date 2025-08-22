@@ -7,3 +7,15 @@
   font-weight: 400;
   font-style: normal;
 }
+.react-datepicker__input-container input {
+  @apply bg-white text-gray-900 ;
+}
+
+/* global.css */
+.custom-zebra tbody tr:nth-child(odd) {
+  @apply bg-white;
+}
+
+.custom-zebra tbody tr:nth-child(even) {
+  @apply bg-gray-100;
+}

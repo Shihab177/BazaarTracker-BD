@@ -60,17 +60,17 @@ const Navbar = () => {
             {" "}
             <Logo></Logo>
           </div>
-          <button ref={buttonRef} className="lg:hidden cursor-pointer" onClick={handelMenu}>
+          <button ref={buttonRef} className="lg:hidden cursor-pointer text-[#00B795] text:bg-[#22A587]" onClick={handelMenu}>
             <CiMenuFries className="md:w-10 md:h-10 w-8 h-8"/>
           </button>
 
-          <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[20px] font-bold">
+          <h1 className="xl:text-[30px] lg:text-[24px] md:text-[24px] text-[20px] font-bold text-gray-800">
             BazaarTracker <span className="text-[#00B795]">BD</span>
           </h1>
         </div>
 
         {/*NavLink profile and btn */}
-        <div className="flex  w items-center md:gap-6 gap-2 justify-end">
+        <div className="flex  w items-center md:gap-6 gap-2 justify-end text-gray-800">
           {/* Menu Links */}
           <div className="mx-4 hidden lg:flex">
             <ul className="lg:text-[17px] text-[16px] flex gap-6 justify-between font-semibold">
@@ -168,7 +168,7 @@ const Navbar = () => {
       {menu && (
         <div
           ref={menuRef}
-          className="w-[60%] absolute top-[18] p-4 bg-white border border-gray-300 shadow-md z-50 h-screen rounded-sm"
+          className="w-[60%] absolute top-[18] p-4 bg-white border border-gray-300 shadow-md z-50 h-screen rounded-sm text-gray-800"
         >
           <div className="text-[16px] font-semibold flex flex-col gap-2">
             <NavLink
@@ -177,7 +177,7 @@ const Navbar = () => {
                   ? "underline underline-offset-8 decoration-2 flex gap-2 items-center"
                   : "flex gap-2 items-center"
               }
-              to="profile"
+              to="uProfile"
             >
               <span>
                 <FaUserCircle />

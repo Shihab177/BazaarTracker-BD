@@ -76,13 +76,13 @@ const AllProducts = () => {
    
 
   return (
-    <div className="p-6">
+    <div className="p-6 text-gray-800">
       <h1 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
          All Products
       </h1>
 
       <div className="overflow-x-auto w-full rounded-md">
-        <table className="table min-w-[800px] table-zebra w-full text-md">
+        <table className="table min-w-[800px] custom-zebra w-full text-md">
           <thead className="bg-[#00B795] text-white text-[18px]">
             <tr>
               <th>#</th>

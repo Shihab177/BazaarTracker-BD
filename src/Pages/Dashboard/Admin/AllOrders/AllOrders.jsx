@@ -19,7 +19,7 @@ const AllOrders = () => {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-6 text-gray-800">
       <h1 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
          All Orders
       </h1>
@@ -32,7 +32,7 @@ const AllOrders = () => {
         <p className="text-2xl md:text-3xl text-center font-semibold">No orders found.</p>
       ) : (
         <div className="overflow-x-auto w-full rounded-md">
-          <table className="table table-zebra text-md mx-auto font-semibold max-w-full">
+          <table className="table custom-zebra text-md mx-auto font-semibold max-w-full">
             <thead className="bg-[#00B795] text-white text-[18px]">
               <tr>
                 <th>#</th>

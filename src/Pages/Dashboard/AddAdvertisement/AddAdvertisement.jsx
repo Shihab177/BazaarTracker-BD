@@ -52,7 +52,7 @@ const AddAdvertisement = () => {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto">
+    <div className="p-6 max-w-7xl mx-auto min-h-screen text-gray-800">
       <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
         Create Advertisement
       </h2>

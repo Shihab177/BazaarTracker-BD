@@ -11,13 +11,12 @@ import useAuth from "../../../../hook/useAuth";
 import useAxiosSecure from "../../../../hook/useAxiosSecure";
 import useUserRole from "../../../../hook/useUserRole";
 
-
-const  AdminUpdateProduct = () => {
+const AdminUpdateProduct = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-  const {role,roleLoading}=useUserRole()
+  const { role, roleLoading } = useUserRole();
   const {
     register,
     control,
@@ -31,7 +30,7 @@ const  AdminUpdateProduct = () => {
       prices: [],
     },
   });
-  const { data = {}, } = useQuery({
+  const { data = {} } = useQuery({
     queryKey: ["update-product", user.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/admin-product/${id}`);
@@ -83,9 +82,9 @@ const  AdminUpdateProduct = () => {
       const res = await axiosSecure.patch(`/admin-product/${id}`, updatedData);
       if (res.data.modifiedCount > 0) {
         toast.success("Product updated successfully!");
-       !roleLoading && role === 'admin' && navigate('/dashboard/all-products')
-        
-      !roleLoading && role === 'vendor' &&  navigate("/dashboard/my-products");
+        !roleLoading && role === "admin" && navigate("/dashboard/all-products");
+
+        !roleLoading && role === "vendor" && navigate("/dashboard/my-products");
       }
     } catch {
       toast.error("Failed to update product.");
@@ -93,41 +92,41 @@ const  AdminUpdateProduct = () => {
   };
 
   return (
-    <div className="md:my-15 mt-8 ">
-      <h2 className="md:text-3xl text-2xl font-bold md:mb-8 mb-4 text-center ">
-        Update Product
-      </h2>
-      <div className="xl:w-5xl mx-auto bg-gray-50 p-8 shadow-md rounded-xl">
+    <div className="p-6 text-gray-800">
+      <div className="max-w-7xl mx-auto ">
+        <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
+          Update Product
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div className="md:flex  gap-4 w-full">
-          {/* Vendor Email */}
-          <div className="md:w-[50%]">
-            <label className="block mb-1 font-medium" htmlFor="vendorEmail">
-              Vendor Email
-            </label>
-            <input
-              id="vendorEmail"
-              type="email"
-              value={data?.vendorEmail || ""}
-              readOnly
-              className="w-full px-4 py-2 border border-gray-300 bg-gray-100 rounded-md cursor-not-allowed"
-            />
-          </div>
+            {/* Vendor Email */}
+            <div className="md:w-[50%]">
+              <label className="block mb-1 font-medium" htmlFor="vendorEmail">
+                Vendor Email
+              </label>
+              <input
+                id="vendorEmail"
+                type="email"
+                value={data?.vendorEmail || ""}
+                readOnly
+                className="w-full px-4 py-2 border border-gray-300 bg-gray-100 rounded-md cursor-not-allowed"
+              />
+            </div>
 
-          {/* Vendor Name */}
-          <div className="md:w-[50%]">
-            <label className="block mb-1 font-medium" htmlFor="vendorName">
-              Vendor Name
-            </label>
-            <input
-              id="vendorName"
-              type="text"
-              value={data?.vendorName || ""}
-              readOnly
-              className="w-full px-4 py-2 border border-gray-300 bg-gray-100 rounded-md cursor-not-allowed"
-            />
+            {/* Vendor Name */}
+            <div className="md:w-[50%]">
+              <label className="block mb-1 font-medium" htmlFor="vendorName">
+                Vendor Name
+              </label>
+              <input
+                id="vendorName"
+                type="text"
+                value={data?.vendorName || ""}
+                readOnly
+                className="w-full px-4 py-2 border border-gray-300 bg-gray-100 rounded-md cursor-not-allowed"
+              />
+            </div>
           </div>
-        </div>
           <div>
             <label className="font-medium">Market Name</label>
             <input
@@ -233,16 +232,16 @@ const  AdminUpdateProduct = () => {
                   type="number"
                   placeholder="৳"
                   {...register(`prices.${index}.price`, {
-        required: "Price is required",
-        min: { value: 1, message: "Price must be at least 1৳" },
-      })}
+                    required: "Price is required",
+                    min: { value: 1, message: "Price must be at least 1৳" },
+                  })}
                   className="w-full px-4 py-2 border border-gray-300 bg-white rounded focus:outline-none focus:ring-2 focus:ring-[#00B795]"
                 />
-                 {errors.prices?.[index]?.price && (
-      <p className="text-red-500  text-sm mt-1">
-        {errors.prices[index].price.message}
-      </p>
-    )}
+                {errors.prices?.[index]?.price && (
+                  <p className="text-red-500  text-sm mt-1">
+                    {errors.prices[index].price.message}
+                  </p>
+                )}
                 <button
                   type="button"
                   onClick={() => remove(index)}
@@ -274,8 +273,5 @@ const  AdminUpdateProduct = () => {
     </div>
   );
 };
-
-
-
 
 export default AdminUpdateProduct;

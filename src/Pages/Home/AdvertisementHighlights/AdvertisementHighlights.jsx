@@ -28,10 +28,10 @@ const AdvertisementHighlights = () => {
       viewport={{ once: true }}
       className="mt-12 md:mt-16 lg:mt-20"
     >
-      <h2 className="md:[30px] text-[24px] lg:text-[36px] text-gray-800 font-semibold text-center mb-4 md:mb-6 lg:mb-8">
+      <h2 className="md:[30px] text-[24px] lg:text-[36px] text-gray-800  font-semibold text-center mb-4 md:mb-6 lg:mb-8">
         Featured Vendor Ads
       </h2>
-      <hr className="border border-dashed"/>
+      <hr className="border border-dashed text-gray-600"/>
       {advertisements.length === 0 ? (
         <p className="text-center text-xl text-gray-900 my-10">
           No approved advertisements found.

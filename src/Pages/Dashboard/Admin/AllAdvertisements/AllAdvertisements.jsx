@@ -60,10 +60,10 @@ const AllAdvertisements = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="p-6">
+    <div className="p-6 text-gray-800">
        <h1 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">All Advertisements</h1>
       <div className="overflow-x-auto w-full  rounded-md">
-        <table className="min-w-[800px] text-left">
+        <table className="min-w-[800px] text-left custom-zebra">
           <thead className="bg-[#00B795] text-white text-sm">
             <tr>
               <th className="py-3 px-4">Title</th>

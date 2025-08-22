@@ -106,11 +106,11 @@ const MyAdvertisements = () => {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-6 min-h-screen text-gray-800">
       <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">My Advertisements</h2>
 
       <div className="overflow-x-auto w-full rounded-md ">
-        <table className="table  min-w-[800px] text-md font-semibold border border-gray-200">
+        <table className="table custom-zebra  min-w-[800px] text-md font-semibold border border-gray-200">
           <thead className="bg-[#00B795] text-white text-[18px]">
             <tr>
               <th>Title</th>
@@ -167,8 +167,8 @@ const MyAdvertisements = () => {
         checked={isModalOpen}
         readOnly
       />
-      <div className="modal">
-        <div className="modal-box w-full max-w-lg">
+      <div className="modal ">
+        <div className="modal-box w-full max-w-lg bg-white">
           <h3 className="text-xl font-bold mb-4 text-[#00B795]">
             Edit Advertisement
           </h3>
@@ -263,12 +263,12 @@ const MyAdvertisements = () => {
             </div>
 
             <div className="modal-action">
-              <button type="submit" className="btn bg-[#00B795] text-white">
+              <button type="submit" className="btn bg-[#00B795] border-none text-white">
                 Update
               </button>
               <label
                 htmlFor="edit_ad_modal"
-                className="btn"
+                className="btn bg-red-500 border-none"
                 onClick={closeModal}
               >
                 Cancel

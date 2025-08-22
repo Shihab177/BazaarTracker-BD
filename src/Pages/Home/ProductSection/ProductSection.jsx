@@ -57,7 +57,7 @@ const ProductSection = () => {
                   marketName : {product.marketName}
                 </h3>
                 <p className="text-gray-600 mb-2">Date : {product.date}</p>
-                <p className="mb-1 font-medium">
+                <p className="mb-1 font-medium text-gray-600">
                   {product.itemName} — ৳{product.pricePerUnit}/kg
                 </p>
                 <div className="text-right">

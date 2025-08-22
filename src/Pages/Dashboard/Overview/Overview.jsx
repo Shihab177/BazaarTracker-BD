@@ -70,7 +70,7 @@ const OverviewPage = () => {
   ];
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-gray-100 min-h-screen dark:text-gray-800">
       {/* Header */}
       <h1 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-2">Dashboard Overview</h1>
       <p className="text-gray-600 mb-6">Welcome back! Here is your summary.</p>

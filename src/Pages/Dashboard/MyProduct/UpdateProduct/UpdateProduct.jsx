@@ -91,11 +91,11 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="xl:my-15 mt-10 ">
-      <h2 className="md:text-3xl text-2xl font-bold mb-1 md:mb-8 text-center">
+    <div className="p-6 max-w-7xl mx-auto text-gray-800">
+      <h2 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
         Update Product
       </h2>
-      <div className="xl:w-5xl mx-auto bg-gray-50 p-8 shadow-md rounded-xl">
+      <div className="">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div className="md:flex gap-4 w-full">
           {/* Vendor Email */}

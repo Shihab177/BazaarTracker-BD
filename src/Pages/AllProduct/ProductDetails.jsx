@@ -148,9 +148,9 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto md:my-30 p-6 mt-22 mb-10 md:mb-10">
+    <div className="max-w-7xl mx-auto  p-0  md:pt-20 pt-10  mb-10">
       {/* Market & Product Info */}
-      <div className="text-center mb-4">
+      <div className="text-center mb-4 mt-10">
         <p className="text-xl text-gray-500 font-semibold">
           Market: <span className="font-medium">{product?.marketName}</span>
         </p>
@@ -169,7 +169,7 @@ const ProductDetails = () => {
       </div>
 
       {/* Prices List */}
-      <section className="bg-white shadow border-t  border-gray-200 my-2 rounded p-6">
+      <section className="bg-white shadow border-t  border-gray-200 my-2 rounded p-6 text-gray-800">
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
           Item Prices
         </h2>
@@ -196,7 +196,7 @@ const ProductDetails = () => {
       </section>
 
       {/* Vendor Info */}
-      <section className="bg-gray-50 rounded p-6 shadow">
+      <section className="bg-gray-50 rounded p-6 shadow text-gray-800">
         <h2 className="text-xl font-semibold mb-2">Vendor Information</h2>
         <p>
           <strong>Name:</strong> {product?.vendorName}
@@ -247,7 +247,7 @@ const ProductDetails = () => {
       </div>
 
       {/* Reviews Section */}
-      <section className="bg-white border-t border-gray-200 rounded shadow p-6">
+      <section className="bg-white border-t border-gray-200 rounded shadow p-6 text-gray-800">
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
           User Reviews
         </h2>
@@ -333,7 +333,7 @@ const ProductDetails = () => {
       </section>
 
       {/* Price Comparison Chart */}
-      <section className="bg-white rounded shadow p-6 mt-5 border-t border-gray-200">
+      <section className="bg-white rounded shadow p-6 mt-5 border-t border-gray-200 text-gray-800">
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
           Price Comparison
         </h2>

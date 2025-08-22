@@ -38,7 +38,7 @@ const AllUsers = () => {
   // }
 
   return (
-    <div className="p-6 ">
+    <div className="p-6 text-gray-800">
       <h1 className="md:text-3xl text-2xl text-center lg:text-left font-bold mb-6">
      
         All Users
@@ -61,7 +61,7 @@ const AllUsers = () => {
         <p className="text-2xl text-center font-semibold">No users found.</p>
       ) : (
         <div className="overflow-x-auto w-full rounded-md">
-          <table className="table min-w-[800px] table-zebra text-md font-semibold w-full">
+          <table className="table min-w-[800px] custom-zebra text-md font-semibold w-full">
             <thead className="bg-[#00B795] text-white text-[18px]">
               <tr>
                 <th>#</th>

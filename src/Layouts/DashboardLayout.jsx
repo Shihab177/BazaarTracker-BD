@@ -31,7 +31,7 @@ const DashboardLayout = () => {
       <div className="drawer lg:drawer-open ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
-          <div className="navbar  bg-base-300 lg:hidden w-full">
+          <div className="navbar bg-gray-50 shadow-md text-gray-800 lg:hidden w-full">
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-2"
@@ -42,7 +42,7 @@ const DashboardLayout = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  className="inline-block h-6 w-6 stroke-current"
+                  className="inline-block h-8 w-8 stroke-current"
                 >
                   <path
                     strokeLinecap="round"
@@ -68,7 +68,7 @@ const DashboardLayout = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu   bg-base-200  text-base-content md:text-[22px] text-[16px] min-h-full md:w-80 w-70  shadow-2xl">
+          <ul className="menu   bg-base-200  text-base-content xl:text-[22px] md:text-[18px] text-[16px] min-h-full xl:w-80 w-70   shadow-2xl dark:bg-[#F8F8F8] dark:text-gray-800">
             {/* Sidebar content here */}
 
             <Link className="flex gap-3 items-center" to="/">
